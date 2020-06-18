@@ -1,0 +1,3130 @@
+  [1m[35m (6.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (10.3ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (7.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateBooks (20200618100719)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE TABLE "books" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "body" text, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200618100719"]]
+  [1m[35m (6.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (1.7ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-06-18 10:07:48.290053"], ["updated_at", "2020-06-18 10:07:48.290053"]]
+  [1m[35m (5.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for ::1 at 2020-06-18 19:13:12 +0900
+  [1m[35m (2.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BooksController#top as HTML
+  Rendering books/top.html.erb within layouts/application
+  Rendered books/top.html.erb within layouts/application (Duration: 6.5ms | Allocations: 377)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /mnt/c/git/juvenile0630-develop/Bookers/public/packs
+[Webpacker] Hash: 15d1bb7b54cf6326b9ba
+Version: webpack 4.43.0
+Time: 6601ms
+Built at: 2020/06/18 19:13:34
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-9afcbb5693aa87623e69.js    124 KiB  application  [emitted] [immutable]  application
+js/application-9afcbb5693aa87623e69.js.map    139 KiB  application  [emitted] [dev]        application
+                             manifest.json  364 bytes               [emitted]              
+Entrypoint application = js/application-9afcbb5693aa87623e69.js js/application-9afcbb5693aa87623e69.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 749 bytes {application} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 3 hidden modules
+
+Completed 200 OK in 22647ms (Views: 22610.3ms | ActiveRecord: 0.0ms | Allocations: 33927)
+
+
+Started GET "/bookers" for ::1 at 2020-06-18 19:13:43 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/bookers"):
+  
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.3) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.3) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/bookers" for ::1 at 2020-06-18 19:14:18 +0900
+  
+ArgumentError (Missing :controller key on routes definition, please check your routes.):
+  
+config/routes.rb:3:in `block in <main>'
+config/routes.rb:1:in `<main>'
+Started GET "/books" for ::1 at 2020-06-18 19:14:30 +0900
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  
+ActionController::RoutingError (No route matches [GET] "/books"):
+  
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.3) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.3) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/books" for ::1 at 2020-06-18 19:14:49 +0900
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  
+ActionController::RoutingError (No route matches [GET] "/books"):
+  
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.3) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.3) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/" for ::1 at 2020-06-18 19:17:46 +0900
+Processing by BooksController#top as HTML
+  Rendering books/top.html.erb within layouts/application
+  Rendered books/top.html.erb within layouts/application (Duration: 1.1ms | Allocations: 90)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 292ms (Views: 290.2ms | ActiveRecord: 0.0ms | Allocations: 6593)
+
+
+Started GET "/books/" for ::1 at 2020-06-18 19:17:49 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/books"):
+  
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.3) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.3) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/books/" for ::1 at 2020-06-18 19:18:53 +0900
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  Rendered books/index.html.erb within layouts/application (Duration: 2.0ms | Allocations: 85)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 325ms (Views: 322.2ms | ActiveRecord: 0.0ms | Allocations: 5770)
+
+
+Started GET "/books/" for ::1 at 2020-06-18 19:20:35 +0900
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  Rendered books/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 4)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 64ms (Views: 50.5ms | ActiveRecord: 0.0ms | Allocations: 4000)
+
+
+Started GET "/books/" for ::1 at 2020-06-18 19:33:24 +0900
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  Rendered books/index.html.erb within layouts/application (Duration: 4.6ms | Allocations: 1537)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.0ms | Allocations: 3024)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+     9: </tr>
+    10: </thead>
+    11:   <tbody>
+    12: <% @books.each do |book| %>
+    13:   <tr>
+    14:     <td><% book.title%> </td>
+    15:     <td><% book.body %> </td>
+  
+app/views/books/index.html.erb:12
+Started GET "/books/" for ::1 at 2020-06-18 19:34:56 +0900
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  Rendered books/index.html.erb within layouts/application (Duration: 1.0ms | Allocations: 1206)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms | Allocations: 2185)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+     9: </tr>
+    10: </thead>
+    11:   <tbody>
+    12: <% @books.each do |book| %>
+    13:   <tr>
+    14:     <td><% book.title%> </td>
+    15:     <td><% book.body %> </td>
+  
+app/views/books/index.html.erb:12
+Started GET "/books/" for ::1 at 2020-06-18 19:35:51 +0900
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  Rendered books/index.html.erb within layouts/application (Duration: 10.9ms | Allocations: 1554)
+Completed 500 Internal Server Error in 32ms (ActiveRecord: 0.0ms | Allocations: 2764)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+     9: </tr>
+    10: </thead>
+    11:   <tbody>
+    12: <% @books.each do |book| %>
+    13:   <tr>
+    14:     <td><% book.title%> </td>
+    15:     <td><% book.body %> </td>
+  
+app/views/books/index.html.erb:12
+Started GET "/books/" for ::1 at 2020-06-18 19:36:49 +0900
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  Rendered books/index.html.erb within layouts/application (Duration: 3.6ms | Allocations: 1555)
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.0ms | Allocations: 2756)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+     9: </tr>
+    10: </thead>
+    11:   <tbody>
+    12: <% @books.each do |book| %>
+    13:   <tr>
+    14:     <td><%= book.title %> </td>
+    15:     <td><%= book.body  %> </td>
+  
+app/views/books/index.html.erb:12
+Started GET "/books/" for ::1 at 2020-06-18 19:37:55 +0900
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.7ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/books/index.html.erb:12
+  Rendered books/index.html.erb within layouts/application (Duration: 7.1ms | Allocations: 2225)
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 1.6ms | Allocations: 3758)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    22: 
+    23: <h2>New book</h2>
+    24: 
+    25: <%= form_for(@blog) do |f| %>
+    26: 
+    27: <h4>タイトル</h4>
+    28: <%= f.text_field :title %>
+  
+app/views/books/index.html.erb:25
+Started GET "/books/" for ::1 at 2020-06-18 19:38:22 +0900
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.7ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/books/index.html.erb:12
+  Rendered books/index.html.erb within layouts/application (Duration: 9.8ms | Allocations: 1771)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.7ms | Allocations: 2972)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    22: 
+    23: <h2>New book</h2>
+    24: 
+    25: <%= form_for(@book) do |f| %>
+    26: 
+    27: <h4>タイトル</h4>
+    28: <%= f.text_field :title %>
+  
+app/views/books/index.html.erb:25
+Started GET "/books/" for ::1 at 2020-06-18 19:39:02 +0900
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/books/index.html.erb:12
+  Rendered books/index.html.erb within layouts/application (Duration: 6.9ms | Allocations: 1767)
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.4ms | Allocations: 2968)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    22: 
+    23: <h2>New book</h2>
+    24: 
+    25: <%= form_for(@book) do |f| %>
+    26: 
+    27: <h4>タイトル</h4>
+    28: <%= f.text_field :title %>
+  
+app/views/books/index.html.erb:25
+Started GET "/books/" for ::1 at 2020-06-18 19:39:39 +0900
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/books/index.html.erb:12
+  Rendered books/index.html.erb within layouts/application (Duration: 4.9ms | Allocations: 2198)
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 1.2ms | Allocations: 3731)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    22: 
+    23: <h2>New book</h2>
+    24: 
+    25: <%= form_for(@newbook) do |f| %>
+    26: 
+    27: <h4>タイトル</h4>
+    28: <%= f.text_field :title %>
+  
+app/views/books/index.html.erb:25
+Started GET "/books/" for ::1 at 2020-06-18 19:39:58 +0900
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  Rendered books/index.html.erb within layouts/application (Duration: 1.3ms | Allocations: 1191)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms | Allocations: 2393)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <h1>Books</h1>
+
+<table>
+<thead>
+<tr>
+<th>Title</th>
+<th>Body</th>
+<th colspan="3"></th>
+</tr>
+</thead>
+  <tbody>
+<% @books.each do |b| %>
+  <tr>
+    <td><%= b.title %> </td>
+    <td><%= b.body  %> </td>
+    <td><%= link_to "Edit", edit_book_path(@b) %></td>
+    <td><%= link_to "Remove", destroy_book_path(@b) %></td>
+  </tr>
+<% end %>
+  </tbody>
+<table>
+
+<h2>New book</h2>
+
+<%= form_for(@books)) do |f| %>
+
+<h4>タイトル</h4>
+<%= f.text_field :title %>
+
+<h4>本文</h4>
+<%= f.text_area :body %>
+
+<%= f.submit 'create book' %>
+
+<% end %>
+
+
+
+):
+1:    <h1>Books</h1>
+2:    
+3:    <table>
+4:    <thead>
+5:    <tr>
+6:    <th>Title</th>
+7:    <th>Body</th>
+8:    <th colspan="3"></th>
+9:    </tr>
+10:    </thead>
+11:      <tbody>
+12:    <% @books.each do |b| %>
+13:      <tr>
+14:        <td><%= b.title %> </td>
+15:        <td><%= b.body  %> </td>
+16:        <td><%= link_to "Edit", edit_book_path(@b) %></td>
+17:        <td><%= link_to "Remove", destroy_book_path(@b) %></td>
+18:      </tr>
+19:    <% end %>
+20:      </tbody>
+21:    <table>
+22:    
+23:    <h2>New book</h2>
+24:    
+25:    <%= form_for(@books)) do |f| %>
+26:    
+27:    <h4>タイトル</h4>
+28:    <%= f.text_field :title %>
+29:    
+30:    <h4>本文</h4>
+31:    <%= f.text_area :body %>
+32:    
+33:    <%= f.submit 'create book' %>
+34:    
+35:    <% end %>
+  
+app/views/books/index.html.erb:25: syntax error, unexpected ')', expecting end
+app/views/books/index.html.erb:40: syntax error, unexpected end, expecting end-of-input
+app/views/books/index.html.erb:25: syntax error, unexpected ')', expecting end
+app/views/books/index.html.erb:40: syntax error, unexpected end, expecting end-of-input
+app/views/books/index.html.erb:25: syntax error, unexpected ')', expecting end
+app/views/books/index.html.erb:40: syntax error, unexpected end, expecting end-of-input
+app/views/books/index.html.erb:25: syntax error, unexpected ')', expecting end
+app/views/books/index.html.erb:40: syntax error, unexpected end, expecting end-of-input
+app/views/books/index.html.erb:25: syntax error, unexpected ')', expecting end
+app/views/books/index.html.erb:40: syntax error, unexpected end, expecting end-of-input
+app/views/books/index.html.erb:25: syntax error, unexpected ')', expecting end
+app/views/books/index.html.erb:40: syntax error, unexpected end, expecting end-of-input
+Started GET "/books/" for ::1 at 2020-06-18 19:40:32 +0900
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/books/index.html.erb:12
+  Rendered books/index.html.erb within layouts/application (Duration: 14.5ms | Allocations: 3316)
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 0.4ms | Allocations: 4526)
+
+
+  
+ActionView::Template::Error (undefined method `to_key' for #<ActiveRecord::Relation []>
+Did you mean?  to_set
+               to_ary):
+    22: 
+    23: <h2>New book</h2>
+    24: 
+    25: <%= form_for(@books) do |f| %>
+    26: 
+    27: <h4>タイトル</h4>
+    28: <%= f.text_field :title %>
+  
+app/views/books/index.html.erb:25
+Started GET "/books/" for ::1 at 2020-06-18 19:41:38 +0900
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/books/index.html.erb:12
+  Rendered books/index.html.erb within layouts/application (Duration: 19.7ms | Allocations: 1522)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 115ms (Views: 99.1ms | ActiveRecord: 4.2ms | Allocations: 10391)
+
+
+Started POST "/books" for ::1 at 2020-06-18 19:43:42 +0900
+  
+ActionController::RoutingError (No route matches [POST] "/books"):
+  
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.3) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.3) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started POST "/books" for ::1 at 2020-06-18 19:45:14 +0900
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  
+ActionController::RoutingError (No route matches [POST] "/books"):
+  
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.3) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.3) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started POST "/books" for ::1 at 2020-06-18 19:45:27 +0900
+  
+ActionController::RoutingError (No route matches [POST] "/books"):
+  
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.3) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.3) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started POST "/books" for ::1 at 2020-06-18 19:47:08 +0900
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  
+ActionController::RoutingError (No route matches [POST] "/books"):
+  
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.3) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.3) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started POST "/books" for ::1 at 2020-06-18 19:47:15 +0900
+  
+ActionController::RoutingError (No route matches [POST] "/books"):
+  
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.3) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.3) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started POST "/books" for ::1 at 2020-06-18 19:48:38 +0900
+  
+ActionController::RoutingError (No route matches [POST] "/books"):
+  
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.3) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.3) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/books/" for ::1 at 2020-06-18 19:48:47 +0900
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.7ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/books/index.html.erb:12
+  Rendered books/index.html.erb within layouts/application (Duration: 6.6ms | Allocations: 1279)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 217ms (Views: 199.1ms | ActiveRecord: 2.7ms | Allocations: 10791)
+
+
+Started POST "/books" for ::1 at 2020-06-18 19:48:54 +0900
+  
+ActionController::RoutingError (No route matches [POST] "/books"):
+  
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.3) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.3) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/books/" for ::1 at 2020-06-18 19:49:14 +0900
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.8ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/books/index.html.erb:12
+  Rendered books/index.html.erb within layouts/application (Duration: 7.6ms | Allocations: 1206)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 81ms (Views: 78.8ms | ActiveRecord: 0.8ms | Allocations: 6034)
+
+
+Started GET "/books/" for ::1 at 2020-06-18 19:50:06 +0900
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/books/index.html.erb:12
+  Rendered books/index.html.erb within layouts/application (Duration: 5.3ms | Allocations: 1200)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 228ms (Views: 225.7ms | ActiveRecord: 0.5ms | Allocations: 7315)
+
+
+Started GET "/books/" for ::1 at 2020-06-18 19:51:10 +0900
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.7ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/books/index.html.erb:12
+  Rendered books/index.html.erb within layouts/application (Duration: 29.5ms | Allocations: 1203)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 171ms (Views: 165.6ms | ActiveRecord: 0.7ms | Allocations: 5797)
+
+
+Started GET "/books/" for ::1 at 2020-06-18 19:51:56 +0900
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (1.8ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/books/index.html.erb:12
+  Rendered books/index.html.erb within layouts/application (Duration: 11.4ms | Allocations: 1603)
+Started GET "/books/" for ::1 at 2020-06-18 19:51:56 +0900
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/books/index.html.erb:12
+  Rendered books/index.html.erb within layouts/application (Duration: 3.7ms | Allocations: 953)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 1347ms (Views: 1337.2ms | ActiveRecord: 1.8ms | Allocations: 18355)
+
+
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 1280ms (Views: 1278.2ms | ActiveRecord: 0.4ms | Allocations: 14126)
+
+
+Started GET "/books/" for ::1 at 2020-06-18 19:52:04 +0900
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/books/index.html.erb:12
+  Rendered books/index.html.erb within layouts/application (Duration: 2.9ms | Allocations: 918)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 1155ms (Views: 1153.6ms | ActiveRecord: 0.4ms | Allocations: 7321)
+
+
+Started POST "/books/create" for ::1 at 2020-06-18 19:52:08 +0900
+Processing by BooksController#create as HTML
+  Parameters: {"book"=>{"title"=>"test", "body"=>"test"}, "commit"=>"create book", "authenticity_token"=>"heun92C4L14Vdh0Q+/1opeHFNAHHT43qOp7LAw2Tl0IxSLQ8BFxI0YKIiiR5rOTu/4CZukedqvqVfm5AQ85Dbg=="}
+Completed 500 Internal Server Error in 637ms (ActiveRecord: 0.0ms | Allocations: 98417)
+
+
+  
+NameError (undefined local variable or method `book_params' for #<BooksController:0x00007f60280b9700>
+Did you mean?  books_path):
+  
+app/controllers/books_controller.rb:18:in `create'
+Started POST "/books/create" for ::1 at 2020-06-18 19:55:35 +0900
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by BooksController#create as HTML
+  Parameters: {"book"=>{"title"=>"test", "body"=>"test"}, "commit"=>"create book", "authenticity_token"=>"heun92C4L14Vdh0Q+/1opeHFNAHHT43qOp7LAw2Tl0IxSLQ8BFxI0YKIiiR5rOTu/4CZukedqvqVfm5AQ85Dbg=="}
+Completed 400 Bad Request in 12ms (ActiveRecord: 0.0ms | Allocations: 936)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: newbook):
+  
+app/controllers/books_controller.rb:36:in `book_params'
+app/controllers/books_controller.rb:18:in `create'
+Started POST "/books/create" for ::1 at 2020-06-18 19:56:58 +0900
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by BooksController#create as HTML
+  Parameters: {"book"=>{"title"=>"test", "body"=>"test"}, "commit"=>"create book", "authenticity_token"=>"heun92C4L14Vdh0Q+/1opeHFNAHHT43qOp7LAw2Tl0IxSLQ8BFxI0YKIiiR5rOTu/4CZukedqvqVfm5AQ85Dbg=="}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/books_controller.rb:19:in `create'
+  [1m[36mBook Create (1.9ms)[0m  [1m[32mINSERT INTO "books" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "test"], ["body", "test"], ["created_at", "2020-06-18 10:56:59.236423"], ["updated_at", "2020-06-18 10:56:59.236423"]]
+  ↳ app/controllers/books_controller.rb:19:in `create'
+  [1m[35m (7.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/books_controller.rb:19:in `create'
+Redirected to http://localhost:3000/books
+Completed 302 Found in 45ms (ActiveRecord: 14.5ms | Allocations: 9344)
+
+
+Started GET "/books" for ::1 at 2020-06-18 19:56:59 +0900
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/books/index.html.erb:12
+  Rendered books/index.html.erb within layouts/application (Duration: 405.9ms | Allocations: 76055)
+Completed 500 Internal Server Error in 413ms (ActiveRecord: 0.5ms | Allocations: 76702)
+
+
+  
+ActionView::Template::Error (undefined method `show_book_path' for #<#<Class:0x00007f6024d596f8>:0x00007f6024d5f698>
+Did you mean?  books_show_path):
+    13:   <tr>
+    14:     <td><%= b.title %> </td>
+    15:     <td><%= b.body  %> </td>
+    16:     <td><%= link_to "Show", show_book_path(@b) %></td>
+    17:     <td><%= link_to "Edit", edit_book_path(@b) %></td>
+    18:     <td><%= link_to "Remove", destroy_book_path(@b) %></td>
+    19:   </tr>
+  
+app/views/books/index.html.erb:16
+app/views/books/index.html.erb:12
+Started GET "/books" for ::1 at 2020-06-18 19:59:00 +0900
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/books/index.html.erb:12
+  Rendered books/index.html.erb within layouts/application (Duration: 5.4ms | Allocations: 1814)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 80ms (Views: 78.3ms | ActiveRecord: 0.4ms | Allocations: 6602)
+
+
+Started POST "/books/create" for ::1 at 2020-06-18 19:59:12 +0900
+Processing by BooksController#create as HTML
+  Parameters: {"book"=>{"title"=>"test", "body"=>"test2\r\ntest43\r\n"}, "commit"=>"create book", "authenticity_token"=>"7Rp4z8T84fJUEJkxSxgqzhfpjpNY+YByNXc5UOMOWedZuWsEoBiGfcPuDgXJSaaFCawjKNgrp2Kal5wTrVONyw=="}
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/books_controller.rb:19:in `create'
+  [1m[36mBook Create (2.1ms)[0m  [1m[32mINSERT INTO "books" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "test"], ["body", "test2\r\ntest43\r\n"], ["created_at", "2020-06-18 10:59:12.878860"], ["updated_at", "2020-06-18 10:59:12.878860"]]
+  ↳ app/controllers/books_controller.rb:19:in `create'
+  [1m[35m (12.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/books_controller.rb:19:in `create'
+Redirected to http://localhost:3000/books
+Completed 302 Found in 45ms (ActiveRecord: 14.5ms | Allocations: 3785)
+
+
+Started GET "/books" for ::1 at 2020-06-18 19:59:12 +0900
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/books/index.html.erb:12
+  Rendered books/index.html.erb within layouts/application (Duration: 10.3ms | Allocations: 1243)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 200ms (Views: 198.4ms | ActiveRecord: 0.5ms | Allocations: 5601)
+
+
+Started GET "/books/show" for ::1 at 2020-06-18 19:59:15 +0900
+Processing by BooksController#show as HTML
+  Rendering books/show.html.erb within layouts/application
+  Rendered books/show.html.erb within layouts/application (Duration: 1.0ms | Allocations: 85)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 45ms (Views: 37.9ms | ActiveRecord: 0.0ms | Allocations: 3757)
+
+
+Started GET "/books/edit" for ::1 at 2020-06-18 19:59:17 +0900
+Processing by BooksController#edit as HTML
+Completed 404 Not Found in 163ms (ActiveRecord: 0.0ms | Allocations: 2982)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Book without an ID):
+  
+app/controllers/books_controller.rb:14:in `edit'
+Started GET "/books" for ::1 at 2020-06-18 19:59:28 +0900
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/books/index.html.erb:12
+  Rendered books/index.html.erb within layouts/application (Duration: 14.5ms | Allocations: 1242)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 185ms (Views: 183.1ms | ActiveRecord: 0.5ms | Allocations: 5972)
+
+
+Started GET "/books" for ::1 at 2020-06-18 20:00:54 +0900
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/books/index.html.erb:12
+  Rendered books/index.html.erb within layouts/application (Duration: 8.7ms | Allocations: 1580)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 112ms (Views: 108.2ms | ActiveRecord: 0.4ms | Allocations: 6666)
+
+
+Started GET "/books/" for ::1 at 2020-06-18 20:00:58 +0900
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.7ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/books/index.html.erb:12
+  Rendered books/index.html.erb within layouts/application (Duration: 6.0ms | Allocations: 1259)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 81ms (Views: 78.7ms | ActiveRecord: 0.7ms | Allocations: 5070)
+
+
+Started GET "/books/show.1" for ::1 at 2020-06-18 20:02:21 +0900
+Processing by BooksController#show as 
+  Rendering books/show.html.erb within layouts/application
+  Rendered books/show.html.erb within layouts/application (Duration: 2.3ms | Allocations: 83)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 48ms (Views: 46.5ms | ActiveRecord: 0.0ms | Allocations: 3765)
+
+
+Started GET "/books/edit.1" for ::1 at 2020-06-18 20:02:24 +0900
+Processing by BooksController#edit as 
+Completed 404 Not Found in 1ms (ActiveRecord: 0.0ms | Allocations: 660)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Book without an ID):
+  
+app/controllers/books_controller.rb:14:in `edit'
+Started GET "/books/destroy.1" for ::1 at 2020-06-18 20:02:31 +0900
+Processing by BooksController#destroy as 
+  Rendering books/destroy.html.erb within layouts/application
+  Rendered books/destroy.html.erb within layouts/application (Duration: 1.1ms | Allocations: 85)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 68ms (Views: 66.1ms | ActiveRecord: 0.0ms | Allocations: 4014)
+
+
+Started GET "/books/edit.1" for ::1 at 2020-06-18 20:04:28 +0900
+Processing by BooksController#edit as 
+Completed 404 Not Found in 3ms (ActiveRecord: 0.0ms | Allocations: 658)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Book without an ID):
+  
+app/controllers/books_controller.rb:14:in `edit'
+Started GET "/books/edit.1" for ::1 at 2020-06-18 20:05:40 +0900
+Processing by BooksController#edit as 
+Completed 404 Not Found in 3ms (ActiveRecord: 0.0ms | Allocations: 658)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Book without an ID):
+  
+app/controllers/books_controller.rb:14:in `edit'
+Started GET "/books" for ::1 at 2020-06-18 20:05:43 +0900
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/books/index.html.erb:12
+  Rendered books/index.html.erb within layouts/application (Duration: 4.1ms | Allocations: 2235)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.3ms | Allocations: 3454)
+
+
+  
+ActionView::Template::Error (undefined method `id' for nil:NilClass):
+    13:   <tr>
+    14:     <td><%= b.title %> </td>
+    15:     <td><%= b.body  %> </td>
+    16:     <td><%= link_to "Show", books_show_path(@b.id) %></td>
+    17:     <td><%= link_to "Edit", books_edit_path(@b.id) %></td>
+    18:     <td><%= link_to "Remove", books_destroy_path(@b.id) %></td>
+    19:   </tr>
+  
+app/views/books/index.html.erb:16
+app/views/books/index.html.erb:12
+Started GET "/books" for ::1 at 2020-06-18 20:06:09 +0900
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/books/index.html.erb:12
+  Rendered books/index.html.erb within layouts/application (Duration: 10.2ms | Allocations: 2345)
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 0.5ms | Allocations: 3565)
+
+
+  
+ActionView::Template::Error (undefined method `id' for nil:NilClass):
+    15:     <td><%= b.body  %> </td>
+    16:     <td><%= link_to "Show", books_show_path(@b) %></td>
+    17:     <td><%= link_to "Edit", books_edit_path(@b) %></td>
+    18:     <td><%= link_to "Remove", books_destroy_path(@b.id) %></td>
+    19:   </tr>
+    20: <% end %>
+    21:   </tbody>
+  
+app/views/books/index.html.erb:18
+app/views/books/index.html.erb:12
+Started GET "/books" for ::1 at 2020-06-18 20:06:15 +0900
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.6ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/books/index.html.erb:12
+  Rendered books/index.html.erb within layouts/application (Duration: 17.0ms | Allocations: 1561)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 104ms (Views: 101.6ms | ActiveRecord: 0.6ms | Allocations: 6451)
+
+
+Started GET "/books/" for ::1 at 2020-06-18 20:06:18 +0900
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.6ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/books/index.html.erb:12
+  Rendered books/index.html.erb within layouts/application (Duration: 5.2ms | Allocations: 1243)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 116ms (Views: 114.4ms | ActiveRecord: 0.6ms | Allocations: 5604)
+
+
+Started GET "/books/" for ::1 at 2020-06-18 20:06:29 +0900
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (2.4ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/books/index.html.erb:12
+  Rendered books/index.html.erb within layouts/application (Duration: 9.2ms | Allocations: 1578)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 287ms (Views: 282.5ms | ActiveRecord: 2.4ms | Allocations: 8199)
+
+
+Started GET "/books" for ::1 at 2020-06-18 20:07:28 +0900
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (1.8ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/books/index.html.erb:12
+  Rendered books/index.html.erb within layouts/application (Duration: 13.5ms | Allocations: 1259)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 105ms (Views: 100.8ms | ActiveRecord: 1.8ms | Allocations: 5416)
+
+
+Started GET "/books/edit.1" for ::1 at 2020-06-18 20:07:29 +0900
+Processing by BooksController#edit as 
+Completed 404 Not Found in 3ms (ActiveRecord: 0.0ms | Allocations: 655)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Book without an ID):
+  
+app/controllers/books_controller.rb:14:in `edit'
+Started GET "/books/edit/1" for ::1 at 2020-06-18 20:07:35 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/books/edit/1"):
+  
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.3) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.3) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/books/1/edit" for ::1 at 2020-06-18 20:08:07 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/books/1/edit"):
+  
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.3) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.3) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/books/1/edit" for ::1 at 2020-06-18 20:11:04 +0900
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by BooksController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:14:in `edit'
+  Rendering books/edit.html.erb within layouts/application
+  Rendered books/edit.html.erb within layouts/application (Duration: 0.8ms | Allocations: 90)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 77ms (Views: 53.9ms | ActiveRecord: 2.0ms | Allocations: 9054)
+
+
+Started GET "/books" for ::1 at 2020-06-18 20:11:08 +0900
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.8ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/books/index.html.erb:12
+  Rendered books/index.html.erb within layouts/application (Duration: 395.1ms | Allocations: 76189)
+Completed 500 Internal Server Error in 399ms (ActiveRecord: 0.8ms | Allocations: 76809)
+
+
+  
+ActionView::Template::Error (undefined method `show_book' for #<#<Class:0x00007f6024676610>:0x00007f600004a5d0>
+Did you mean?  show_book_url):
+    13:   <tr>
+    14:     <td><%= b.title %> </td>
+    15:     <td><%= b.body  %> </td>
+    16:     <td><%= link_to "Show", show_book(b) %></td>
+    17:     <td><%= link_to "Edit", edit_book(b) %></td>
+    18:     <td><%= link_to "Remove", destroy_book(b) %></td>
+    19:   </tr>
+  
+app/views/books/index.html.erb:16
+app/views/books/index.html.erb:12
+Started GET "/books/" for ::1 at 2020-06-18 20:11:11 +0900
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/books/index.html.erb:12
+  Rendered books/index.html.erb within layouts/application (Duration: 240.3ms | Allocations: 75841)
+Completed 500 Internal Server Error in 244ms (ActiveRecord: 0.5ms | Allocations: 76321)
+
+
+  
+ActionView::Template::Error (undefined method `show_book' for #<#<Class:0x00007f6024676610>:0x00007f60288e3408>
+Did you mean?  show_book_url):
+    13:   <tr>
+    14:     <td><%= b.title %> </td>
+    15:     <td><%= b.body  %> </td>
+    16:     <td><%= link_to "Show", show_book(b) %></td>
+    17:     <td><%= link_to "Edit", edit_book(b) %></td>
+    18:     <td><%= link_to "Remove", destroy_book(b) %></td>
+    19:   </tr>
+  
+app/views/books/index.html.erb:16
+app/views/books/index.html.erb:12
+Started GET "/books" for ::1 at 2020-06-18 20:12:28 +0900
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.7ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/books/index.html.erb:12
+  Rendered books/index.html.erb within layouts/application (Duration: 244.1ms | Allocations: 76232)
+Completed 500 Internal Server Error in 253ms (ActiveRecord: 0.7ms | Allocations: 77449)
+
+
+  
+ActionView::Template::Error (undefined method `edit_book' for #<#<Class:0x00007f6028be4030>:0x00007f6028bee490>
+Did you mean?  edit_book_url):
+    14:     <td><%= b.title %> </td>
+    15:     <td><%= b.body  %> </td>
+    16:     <td><%= link_to "Show", show_book_path(b) %></td>
+    17:     <td><%= link_to "Edit", edit_book(b) %></td>
+    18:     <td><%= link_to "Remove", destroy_book(b) %></td>
+    19:   </tr>
+    20: <% end %>
+  
+app/views/books/index.html.erb:17
+app/views/books/index.html.erb:12
+Started GET "/books" for ::1 at 2020-06-18 20:12:38 +0900
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/books/index.html.erb:12
+  Rendered books/index.html.erb within layouts/application (Duration: 9.0ms | Allocations: 1842)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 337ms (Views: 333.6ms | ActiveRecord: 0.3ms | Allocations: 8982)
+
+
+Started GET "/books/" for ::1 at 2020-06-18 20:12:40 +0900
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.6ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/books/index.html.erb:12
+  Rendered books/index.html.erb within layouts/application (Duration: 10.5ms | Allocations: 1114)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 118ms (Views: 115.9ms | ActiveRecord: 0.6ms | Allocations: 5300)
+
+
+Started GET "/books/1/edit" for ::1 at 2020-06-18 20:12:44 +0900
+Processing by BooksController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:14:in `edit'
+  Rendering books/edit.html.erb within layouts/application
+  Rendered books/edit.html.erb within layouts/application (Duration: 0.8ms | Allocations: 83)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 71ms (Views: 66.5ms | ActiveRecord: 0.5ms | Allocations: 4619)
+
+
+Started GET "/books/1/show" for ::1 at 2020-06-18 20:12:46 +0900
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendering books/show.html.erb within layouts/application
+  Rendered books/show.html.erb within layouts/application (Duration: 0.8ms | Allocations: 85)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 78ms (Views: 74.8ms | ActiveRecord: 0.0ms | Allocations: 4161)
+
+
+Started GET "/books/1/edit" for ::1 at 2020-06-18 20:12:48 +0900
+Processing by BooksController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (1.3ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:14:in `edit'
+  Rendering books/edit.html.erb within layouts/application
+  Rendered books/edit.html.erb within layouts/application (Duration: 0.1ms | Allocations: 4)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 154ms (Views: 147.5ms | ActiveRecord: 1.3ms | Allocations: 5198)
+
+
+Started GET "/books" for ::1 at 2020-06-18 20:13:10 +0900
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/books/index.html.erb:12
+  Rendered books/index.html.erb within layouts/application (Duration: 7.6ms | Allocations: 1558)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 135ms (Views: 114.2ms | ActiveRecord: 4.4ms | Allocations: 9849)
+
+
+Started GET "/books/1/show" for ::1 at 2020-06-18 20:13:12 +0900
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:8:in `show'
+  Rendering books/show.html.erb within layouts/application
+  Rendered books/show.html.erb within layouts/application (Duration: 0.1ms | Allocations: 4)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 148ms (Views: 144.5ms | ActiveRecord: 0.4ms | Allocations: 5318)
+
+
+Started GET "/books/1/edit" for ::1 at 2020-06-18 20:13:14 +0900
+Processing by BooksController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (1.7ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:15:in `edit'
+  Rendering books/edit.html.erb within layouts/application
+  Rendered books/edit.html.erb within layouts/application (Duration: 0.1ms | Allocations: 4)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 132ms (Views: 124.9ms | ActiveRecord: 1.7ms | Allocations: 5151)
+
+
+Started GET "/books/1/destroy" for ::1 at 2020-06-18 20:13:15 +0900
+Processing by BooksController#destroy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.7ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:31:in `destroy'
+  Rendering books/destroy.html.erb within layouts/application
+  Rendered books/destroy.html.erb within layouts/application (Duration: 1.9ms | Allocations: 90)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 336ms (Views: 328.8ms | ActiveRecord: 0.7ms | Allocations: 5588)
+
+
+Started GET "/books/1/show" for ::1 at 2020-06-18 20:13:17 +0900
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:8:in `show'
+  Rendering books/show.html.erb within layouts/application
+  Rendered books/show.html.erb within layouts/application (Duration: 0.1ms | Allocations: 4)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 218ms (Views: 213.2ms | ActiveRecord: 0.4ms | Allocations: 6191)
+
+
+Started GET "/books/1/show" for ::1 at 2020-06-18 20:17:28 +0900
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:8:in `show'
+  Rendering books/show.html.erb within layouts/application
+  Rendered books/show.html.erb within layouts/application (Duration: 0.1ms | Allocations: 4)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 31ms (Views: 24.0ms | ActiveRecord: 0.4ms | Allocations: 3931)
+
+
+Started GET "/books" for ::1 at 2020-06-18 20:17:53 +0900
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.8ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/books/index.html.erb:12
+  Rendered books/index.html.erb within layouts/application (Duration: 10.6ms | Allocations: 1557)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 213ms (Views: 190.7ms | ActiveRecord: 4.2ms | Allocations: 10028)
+
+
+Started GET "/books/1" for ::1 at 2020-06-18 20:17:55 +0900
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:8:in `show'
+  Rendering books/show.html.erb within layouts/application
+  Rendered books/show.html.erb within layouts/application (Duration: 0.1ms | Allocations: 4)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 48ms (Views: 42.2ms | ActiveRecord: 0.4ms | Allocations: 4102)
+
+
+Started GET "/books" for ::1 at 2020-06-18 20:22:22 +0900
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/books/index.html.erb:12
+  Rendered books/index.html.erb within layouts/application (Duration: 12.4ms | Allocations: 1433)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 131ms (Views: 125.8ms | ActiveRecord: 0.5ms | Allocations: 6001)
+
+
+Started GET "/books/1" for ::1 at 2020-06-18 20:22:23 +0900
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:8:in `show'
+  Rendering books/show.html.erb within layouts/application
+  Rendered books/show.html.erb within layouts/application (Duration: 557.3ms | Allocations: 147536)
+Completed 500 Internal Server Error in 564ms (ActiveRecord: 0.4ms | Allocations: 148677)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `book' for #<#<Class:0x00007f6028dc2c08>:0x00000000032f9150>
+Did you mean?  @book):
+    1: 
+    2: <p>
+    3:   <strong>Title:</strong>
+    4:   <%= book.title  %>
+    5: </p>
+    6: 
+    7: <p>
+  
+app/views/books/show.html.erb:4
+Started GET "/books/1" for ::1 at 2020-06-18 20:22:53 +0900
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.8ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:8:in `show'
+  Rendering books/show.html.erb within layouts/application
+  Rendered books/show.html.erb within layouts/application (Duration: 453.1ms | Allocations: 147090)
+Completed 500 Internal Server Error in 471ms (ActiveRecord: 2.9ms | Allocations: 152224)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `book' for #<#<Class:0x00007f6028d954b0>:0x00007f6028da32e0>):
+    1: 
+    2: <p>
+    3:   <strong>Title:</strong>
+    4:   <%= book.title  %>
+    5: </p>
+    6: 
+    7: <p>
+  
+app/views/books/show.html.erb:4
+Started GET "/books/1" for ::1 at 2020-06-18 20:24:26 +0900
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:8:in `show'
+  Rendering books/show.html.erb within layouts/application
+  Rendered books/show.html.erb within layouts/application (Duration: 1.2ms | Allocations: 280)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 557ms (Views: 536.3ms | ActiveRecord: 2.3ms | Allocations: 14289)
+
+
+Started GET "/books/index" for ::1 at 2020-06-18 20:24:36 +0900
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.7ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/books/index.html.erb:12
+  Rendered books/index.html.erb within layouts/application (Duration: 9.4ms | Allocations: 1857)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 260ms (Views: 257.8ms | ActiveRecord: 0.7ms | Allocations: 7762)
+
+
+Started GET "/books/index" for ::1 at 2020-06-18 20:26:11 +0900
+  
+SyntaxError (/mnt/c/git/juvenile0630-develop/Bookers/config/routes.rb:3: syntax error, unexpected tIDENTIFIER, expecting end
+... 'books/', to: 'books#index' as: 'index_book'
+...                             ^~):
+  
+config/routes.rb:3: syntax error, unexpected tIDENTIFIER, expecting end
+config/routes.rb:3: syntax error, unexpected tIDENTIFIER, expecting end
+config/routes.rb:3: syntax error, unexpected tIDENTIFIER, expecting end
+Started GET "/books/" for ::1 at 2020-06-18 20:26:14 +0900
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  
+ActionController::RoutingError (No route matches [GET] "/books"):
+  
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.3) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.3) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/books/index" for ::1 at 2020-06-18 20:26:33 +0900
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/books/index.html.erb:12
+  Rendered books/index.html.erb within layouts/application (Duration: 10.3ms | Allocations: 1874)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 101ms (Views: 59.6ms | ActiveRecord: 4.8ms | Allocations: 10042)
+
+
+Started GET "/books/" for ::1 at 2020-06-18 20:26:36 +0900
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.6ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/books/index.html.erb:12
+  Rendered books/index.html.erb within layouts/application (Duration: 13.9ms | Allocations: 1114)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 89ms (Views: 86.4ms | ActiveRecord: 0.6ms | Allocations: 4700)
+
+
+Started GET "/books/1" for ::1 at 2020-06-18 20:26:39 +0900
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.6ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:8:in `show'
+  Rendering books/show.html.erb within layouts/application
+  Rendered books/show.html.erb within layouts/application (Duration: 2.0ms | Allocations: 274)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 136ms (Views: 127.3ms | ActiveRecord: 0.6ms | Allocations: 5355)
+
+
+Started GET "/books/1" for ::1 at 2020-06-18 20:26:43 +0900
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.7ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:8:in `show'
+  Rendering books/show.html.erb within layouts/application
+  Rendered books/show.html.erb within layouts/application (Duration: 0.4ms | Allocations: 93)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 58ms (Views: 52.2ms | ActiveRecord: 0.7ms | Allocations: 4208)
+
+
+Started GET "/books" for ::1 at 2020-06-18 20:26:44 +0900
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.6ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/books/index.html.erb:12
+  Rendered books/index.html.erb within layouts/application (Duration: 5.8ms | Allocations: 1108)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 67ms (Views: 64.7ms | ActiveRecord: 0.6ms | Allocations: 4800)
+
+
+Started GET "/books/1" for ::1 at 2020-06-18 20:26:45 +0900
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (2.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:8:in `show'
+  Rendering books/show.html.erb within layouts/application
+  Rendered books/show.html.erb within layouts/application (Duration: 1.0ms | Allocations: 93)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 116ms (Views: 104.7ms | ActiveRecord: 2.1ms | Allocations: 4669)
+
+
+Started GET "/books/1/edit" for ::1 at 2020-06-18 20:26:46 +0900
+Processing by BooksController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:15:in `edit'
+  Rendering books/edit.html.erb within layouts/application
+  Rendered books/edit.html.erb within layouts/application (Duration: 1.6ms | Allocations: 83)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 254ms (Views: 242.1ms | ActiveRecord: 0.5ms | Allocations: 5554)
+
+
+Started GET "/books/1" for ::1 at 2020-06-18 20:32:30 +0900
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (1.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:8:in `show'
+  Rendering books/show.html.erb within layouts/application
+  Rendered books/show.html.erb within layouts/application (Duration: 1.8ms | Allocations: 279)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 82ms (Views: 76.0ms | ActiveRecord: 1.2ms | Allocations: 5590)
+
+
+Started GET "/books/1/edit" for ::1 at 2020-06-18 20:32:31 +0900
+Processing by BooksController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:15:in `edit'
+  Rendering books/edit.html.erb within layouts/application
+  Rendered books/edit.html.erb within layouts/application (Duration: 6.3ms | Allocations: 1374)
+Completed 500 Internal Server Error in 31ms (ActiveRecord: 0.4ms | Allocations: 2509)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"update", :controller=>"books", :id=>"1"}):
+    1: <h2>Edit book</h2>
+    2: 
+    3: <%= form_for(@book, :url => {controller: 'books', action:'update'}) do |f| %>
+    4: 
+    5: <h4>タイトル</h4>
+    6: <%= f.text_field :title %>
+  
+app/views/books/edit.html.erb:3
+Started GET "/books/1/edit" for ::1 at 2020-06-18 20:33:11 +0900
+Processing by BooksController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (1.8ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:15:in `edit'
+  Rendering books/edit.html.erb within layouts/application
+  Rendered books/edit.html.erb within layouts/application (Duration: 9.3ms | Allocations: 1370)
+Completed 500 Internal Server Error in 30ms (ActiveRecord: 1.8ms | Allocations: 3102)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"update", :controller=>"book", :id=>"1"}):
+    1: <h2>Edit book</h2>
+    2: 
+    3: <%= form_for(@book, :url => {controller: 'book', action:'update'}) do |f| %>
+    4: 
+    5: <h4>タイトル</h4>
+    6: <%= f.text_field :title %>
+  
+app/views/books/edit.html.erb:3
+Started GET "/books/1" for ::1 at 2020-06-18 20:33:14 +0900
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (1.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:8:in `show'
+  Rendering books/show.html.erb within layouts/application
+  Rendered books/show.html.erb within layouts/application (Duration: 2.3ms | Allocations: 274)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 44ms (Views: 32.5ms | ActiveRecord: 1.1ms | Allocations: 4518)
+
+
+Started GET "/books/1/edit" for ::1 at 2020-06-18 20:33:16 +0900
+Processing by BooksController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (2.4ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:15:in `edit'
+  Rendering books/edit.html.erb within layouts/application
+  Rendered books/edit.html.erb within layouts/application (Duration: 3.5ms | Allocations: 1186)
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 2.4ms | Allocations: 2185)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"update", :controller=>"book", :id=>"1"}):
+    1: <h2>Edit book</h2>
+    2: 
+    3: <%= form_for(@book, :url => {controller: 'book', action:'update'}) do |f| %>
+    4: 
+    5: <h4>タイトル</h4>
+    6: <%= f.text_field :title %>
+  
+app/views/books/edit.html.erb:3
+Started GET "/books/1/edit" for ::1 at 2020-06-18 20:36:36 +0900
+Processing by BooksController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.6ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:15:in `edit'
+  Rendering books/edit.html.erb within layouts/application
+  Rendered books/edit.html.erb within layouts/application (Duration: 2.7ms | Allocations: 1368)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.6ms | Allocations: 3102)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"update", :controller=>"books", :id=>"1"}):
+    1: <h2>Edit book</h2>
+    2: 
+    3: <%= form_for(@book, :url => {controller: 'books', action:'update'}) do |f| %>
+    4: 
+    5: <h4>タイトル</h4>
+    6: <%= f.text_field :title %>
+  
+app/views/books/edit.html.erb:3
+Started GET "/books/1/edit" for ::1 at 2020-06-18 20:37:12 +0900
+Processing by BooksController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (1.0ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:15:in `edit'
+  Rendering books/edit.html.erb within layouts/application
+  Rendered books/edit.html.erb within layouts/application (Duration: 618.6ms | Allocations: 147422)
+Completed 500 Internal Server Error in 630ms (ActiveRecord: 1.0ms | Allocations: 149158)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `book' for #<#<Class:0x00007f6028a67a40>:0x00007f6028a65df8>
+Did you mean?  @book):
+    1: <h2>Edit book</h2>
+    2: 
+    3: <h4>タイトル</h4>
+    4: <%= book.text_field :title %>
+    5: 
+    6: <h4>本文</h4>
+    7: 
+  
+app/views/books/edit.html.erb:4
+Started GET "/books/1/edit" for ::1 at 2020-06-18 20:37:28 +0900
+Processing by BooksController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:15:in `edit'
+  Rendering books/edit.html.erb within layouts/application
+  Rendered books/edit.html.erb within layouts/application (Duration: 876.2ms | Allocations: 147417)
+Completed 500 Internal Server Error in 895ms (ActiveRecord: 0.4ms | Allocations: 149153)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `book' for #<#<Class:0x00007f60280f9c10>:0x00007f601c00aae0>
+Did you mean?  @book):
+    5: 
+    6: <h4>本文</h4>
+    7: 
+    8: <%= book..body %>
+    9: <%= book.submit 'Update Book' %>
+  
+app/views/books/edit.html.erb:8
+Started GET "/books/1/edit" for ::1 at 2020-06-18 20:37:38 +0900
+Processing by BooksController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:15:in `edit'
+  Rendering books/edit.html.erb within layouts/application
+  Rendered books/edit.html.erb within layouts/application (Duration: 468.1ms | Allocations: 147245)
+Completed 500 Internal Server Error in 479ms (ActiveRecord: 0.4ms | Allocations: 148981)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `body' for #<#<Class:0x00007f6028ca4538>:0x00007f6028caac58>):
+    5: 
+    6: <h4>本文</h4>
+    7: 
+    8: <%= @book..body %>
+  
+app/views/books/edit.html.erb:8
+Started GET "/books/1/edit" for ::1 at 2020-06-18 20:37:46 +0900
+Processing by BooksController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:15:in `edit'
+  Rendering books/edit.html.erb within layouts/application
+  Rendered books/edit.html.erb within layouts/application (Duration: 2.4ms | Allocations: 133)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 269ms (Views: 251.2ms | ActiveRecord: 0.5ms | Allocations: 5750)
+
+
+Started GET "/books/1/edit" for ::1 at 2020-06-18 20:39:32 +0900
+Processing by BooksController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.7ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:15:in `edit'
+  Rendering books/edit.html.erb within layouts/application
+  Rendered books/edit.html.erb within layouts/application (Duration: 1.7ms | Allocations: 474)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 220ms (Views: 209.9ms | ActiveRecord: 0.7ms | Allocations: 6651)
+
+
+Started PATCH "/books/1" for ::1 at 2020-06-18 20:39:36 +0900
+  
+ActionController::RoutingError (No route matches [PATCH] "/books/1"):
+  
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.3) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.3) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started PATCH "/books/1" for ::1 at 2020-06-18 20:45:16 +0900
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  
+ActionController::RoutingError (No route matches [PATCH] "/books/1"):
+  
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.3) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.3) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started PATCH "/books/1" for ::1 at 2020-06-18 20:45:19 +0900
+  
+ActionController::RoutingError (No route matches [PATCH] "/books/1"):
+  
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.3) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.3) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/books/1/edit" for ::1 at 2020-06-18 20:50:41 +0900
+Processing by BooksController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:15:in `edit'
+  Rendering books/edit.html.erb within layouts/application
+  Rendered books/edit.html.erb within layouts/application (Duration: 1.9ms | Allocations: 351)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 148ms (Views: 118.9ms | ActiveRecord: 0.5ms | Allocations: 8546)
+
+
+Started PATCH "/books/1" for ::1 at 2020-06-18 20:50:42 +0900
+  
+ActionController::RoutingError (No route matches [PATCH] "/books/1"):
+  
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.3) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.3) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started PATCH "/books/1" for ::1 at 2020-06-18 20:52:33 +0900
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  
+ActionController::RoutingError (No route matches [PATCH] "/books/1"):
+  
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.3) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.3) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/books/1" for ::1 at 2020-06-18 20:52:44 +0900
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.7ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:8:in `show'
+  Rendering books/show.html.erb within layouts/application
+  Rendered books/show.html.erb within layouts/application (Duration: 3.1ms | Allocations: 279)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 107ms (Views: 67.6ms | ActiveRecord: 7.1ms | Allocations: 8821)
+
+
+Started GET "/books/1/edit" for ::1 at 2020-06-18 20:52:48 +0900
+Processing by BooksController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:15:in `edit'
+  Rendering books/edit.html.erb within layouts/application
+  Rendered books/edit.html.erb within layouts/application (Duration: 1.8ms | Allocations: 346)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 35ms (Views: 29.4ms | ActiveRecord: 0.5ms | Allocations: 4345)
+
+
+Started PATCH "/books/1" for ::1 at 2020-06-18 20:52:49 +0900
+  
+ActionController::RoutingError (No route matches [PATCH] "/books/1"):
+  
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.3) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.3) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/books/" for ::1 at 2020-06-18 20:53:04 +0900
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/books/index.html.erb:12
+  Rendered books/index.html.erb within layouts/application (Duration: 5.3ms | Allocations: 1805)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 280ms (Views: 271.6ms | ActiveRecord: 0.5ms | Allocations: 7527)
+
+
+Started GET "/books/2" for ::1 at 2020-06-18 20:53:07 +0900
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:8:in `show'
+  Rendering books/show.html.erb within layouts/application
+  Rendered books/show.html.erb within layouts/application (Duration: 0.4ms | Allocations: 94)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 273ms (Views: 269.8ms | ActiveRecord: 0.4ms | Allocations: 6546)
+
+
+Started GET "/books/2/destroy" for ::1 at 2020-06-18 20:53:09 +0900
+Processing by BooksController#destroy as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:31:in `destroy'
+  Rendering books/destroy.html.erb within layouts/application
+  Rendered books/destroy.html.erb within layouts/application (Duration: 0.9ms | Allocations: 83)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 372ms (Views: 368.2ms | ActiveRecord: 0.4ms | Allocations: 7627)
+
+
+Started GET "/books" for ::1 at 2020-06-18 20:53:11 +0900
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/books/index.html.erb:12
+  Rendered books/index.html.erb within layouts/application (Duration: 3.3ms | Allocations: 1114)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 122ms (Views: 120.1ms | ActiveRecord: 0.5ms | Allocations: 5271)
+
+
+Started GET "/books/2/destroy" for ::1 at 2020-06-18 20:54:20 +0900
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by BooksController#destroy as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mBook Load (0.7ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:31:in `destroy'
+Completed 500 Internal Server Error in 398ms (ActiveRecord: 9.5ms | Allocations: 102683)
+
+
+  
+NameError (undefined local variable or method `book' for #<BooksController:0x00007f60252e5a40>
+Did you mean?  @book):
+  
+app/controllers/books_controller.rb:32:in `destroy'
+Started GET "/books/2/destroy" for ::1 at 2020-06-18 20:54:38 +0900
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by BooksController#destroy as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mBook Load (1.0ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:31:in `destroy'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/books_controller.rb:32:in `destroy'
+  [1m[36mBook Destroy (2.0ms)[0m  [1m[31mDELETE FROM "books" WHERE "books"."id" = ?[0m  [["id", 2]]
+  ↳ app/controllers/books_controller.rb:32:in `destroy'
+  [1m[35m (10.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/books_controller.rb:32:in `destroy'
+Completed 500 Internal Server Error in 365ms (ActiveRecord: 16.1ms | Allocations: 106098)
+
+
+  
+NameError (undefined local variable or method `book_path' for #<BooksController:0x00007f602808ce08>
+Did you mean?  root_path):
+  
+app/controllers/books_controller.rb:33:in `destroy'
+Started GET "/books/2/destroy" for ::1 at 2020-06-18 20:54:58 +0900
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by BooksController#destroy as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mBook Load (0.8ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:31:in `destroy'
+Completed 404 Not Found in 15ms (ActiveRecord: 2.5ms | Allocations: 2159)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Book with 'id'=2):
+  
+app/controllers/books_controller.rb:31:in `destroy'
+Started GET "/books/" for ::1 at 2020-06-18 20:55:16 +0900
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.6ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/books/index.html.erb:12
+  Rendered books/index.html.erb within layouts/application (Duration: 16.0ms | Allocations: 1461)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 233ms (Views: 204.4ms | ActiveRecord: 0.6ms | Allocations: 9098)
+
+
+Started POST "/books/create" for ::1 at 2020-06-18 20:55:22 +0900
+Processing by BooksController#create as HTML
+  Parameters: {"book"=>{"title"=>"tes", "body"=>"rwrgag"}, "commit"=>"create book", "authenticity_token"=>"SmrBewByKUOAIECTdnpNx2ck+P1nmaWIIcP/IysFuuD+ydKwZJZOzBfe16f0K8GMeWFVRudLgpiOI1pgZVhuzA=="}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/books_controller.rb:20:in `create'
+  [1m[36mBook Create (1.8ms)[0m  [1m[32mINSERT INTO "books" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "tes"], ["body", "rwrgag"], ["created_at", "2020-06-18 11:55:22.467413"], ["updated_at", "2020-06-18 11:55:22.467413"]]
+  ↳ app/controllers/books_controller.rb:20:in `create'
+  [1m[35m (10.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/books_controller.rb:20:in `create'
+Completed 500 Internal Server Error in 425ms (ActiveRecord: 12.8ms | Allocations: 102526)
+
+
+  
+NameError (undefined local variable or method `books_path' for #<BooksController:0x00007f6024da8ca8>
+Did you mean?  books_new_path):
+  
+app/controllers/books_controller.rb:21:in `create'
+Started POST "/books/create" for ::1 at 2020-06-18 20:56:27 +0900
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by BooksController#create as HTML
+  Parameters: {"book"=>{"title"=>"tes", "body"=>"rwrgag"}, "commit"=>"create book", "authenticity_token"=>"SmrBewByKUOAIECTdnpNx2ck+P1nmaWIIcP/IysFuuD+ydKwZJZOzBfe16f0K8GMeWFVRudLgpiOI1pgZVhuzA=="}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/books_controller.rb:20:in `create'
+  [1m[36mBook Create (2.3ms)[0m  [1m[32mINSERT INTO "books" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "tes"], ["body", "rwrgag"], ["created_at", "2020-06-18 11:56:27.684062"], ["updated_at", "2020-06-18 11:56:27.684062"]]
+  ↳ app/controllers/books_controller.rb:20:in `create'
+  [1m[35m (6.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/books_controller.rb:20:in `create'
+Redirected to http://localhost:3000/books
+Completed 302 Found in 62ms (ActiveRecord: 11.6ms | Allocations: 6918)
+
+
+Started GET "/books" for ::1 at 2020-06-18 20:56:27 +0900
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.7ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/books/index.html.erb:12
+  Rendered books/index.html.erb within layouts/application (Duration: 6.7ms | Allocations: 1646)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 48ms (Views: 45.6ms | ActiveRecord: 0.7ms | Allocations: 5524)
+
+
+Started GET "/books/4/destroy" for ::1 at 2020-06-18 20:56:31 +0900
+Processing by BooksController#destroy as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:31:in `destroy'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/books_controller.rb:32:in `destroy'
+  [1m[36mBook Destroy (3.3ms)[0m  [1m[31mDELETE FROM "books" WHERE "books"."id" = ?[0m  [["id", 4]]
+  ↳ app/controllers/books_controller.rb:32:in `destroy'
+  [1m[35m (9.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/books_controller.rb:32:in `destroy'
+Redirected to http://localhost:3000/books
+Completed 302 Found in 35ms (ActiveRecord: 13.3ms | Allocations: 4052)
+
+
+Started GET "/books" for ::1 at 2020-06-18 20:56:31 +0900
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (2.0ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/books/index.html.erb:12
+  Rendered books/index.html.erb within layouts/application (Duration: 6.2ms | Allocations: 1103)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 198ms (Views: 193.8ms | ActiveRecord: 2.0ms | Allocations: 6542)
+
+
+Started GET "/books/3/destroy" for ::1 at 2020-06-18 20:56:32 +0900
+Processing by BooksController#destroy as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:31:in `destroy'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/books_controller.rb:32:in `destroy'
+  [1m[36mBook Destroy (2.2ms)[0m  [1m[31mDELETE FROM "books" WHERE "books"."id" = ?[0m  [["id", 3]]
+  ↳ app/controllers/books_controller.rb:32:in `destroy'
+  [1m[35m (8.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/books_controller.rb:32:in `destroy'
+Redirected to http://localhost:3000/books
+Completed 302 Found in 28ms (ActiveRecord: 10.9ms | Allocations: 4247)
+
+
+Started GET "/books" for ::1 at 2020-06-18 20:56:32 +0900
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.6ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/books/index.html.erb:12
+  Rendered books/index.html.erb within layouts/application (Duration: 3.9ms | Allocations: 1010)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 107ms (Views: 104.8ms | ActiveRecord: 0.6ms | Allocations: 5257)
+
+
+Started GET "/books" for ::1 at 2020-06-18 20:57:28 +0900
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (2.5ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/books/index.html.erb:12
+  Rendered books/index.html.erb within layouts/application (Duration: 7.5ms | Allocations: 1010)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 131ms (Views: 127.0ms | ActiveRecord: 2.5ms | Allocations: 4986)
+
+
+Started POST "/books/create" for ::1 at 2020-06-18 20:57:33 +0900
+Processing by BooksController#create as HTML
+  Parameters: {"book"=>{"title"=>"sascascs", "body"=>"ascascasc"}, "commit"=>"create book", "authenticity_token"=>"PCcGau7+FxRLUvAezHtQ/YqOO6O+xNElmf0VTu+TavGIhBWhihpwm9ysZypOKty2lMuWGD4W9jU2HbANoc6+3Q=="}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/books_controller.rb:20:in `create'
+  [1m[36mBook Create (2.1ms)[0m  [1m[32mINSERT INTO "books" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "sascascs"], ["body", "ascascasc"], ["created_at", "2020-06-18 11:57:33.448113"], ["updated_at", "2020-06-18 11:57:33.448113"]]
+  ↳ app/controllers/books_controller.rb:20:in `create'
+  [1m[35m (9.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/books_controller.rb:20:in `create'
+Redirected to http://localhost:3000/books
+Completed 302 Found in 33ms (ActiveRecord: 11.6ms | Allocations: 4240)
+
+
+Started GET "/books" for ::1 at 2020-06-18 20:57:33 +0900
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/books/index.html.erb:12
+  Rendered books/index.html.erb within layouts/application (Duration: 4.5ms | Allocations: 1103)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 307ms (Views: 305.4ms | ActiveRecord: 0.5ms | Allocations: 5834)
+
+
+Started POST "/books/create" for ::1 at 2020-06-18 20:57:38 +0900
+Processing by BooksController#create as HTML
+  Parameters: {"book"=>{"title"=>"saca", "body"=>"ascavadbd"}, "commit"=>"create book", "authenticity_token"=>"Wko21Icy6dOpmB8pU+c9h4K+AOWzb0AI8zvsbMJNAlju6SUf49aOXD5miB3RtrHMnPutXjO9Zxhc20kvjBDWdA=="}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/books_controller.rb:20:in `create'
+  [1m[36mBook Create (6.8ms)[0m  [1m[32mINSERT INTO "books" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "saca"], ["body", "ascavadbd"], ["created_at", "2020-06-18 11:57:38.030241"], ["updated_at", "2020-06-18 11:57:38.030241"]]
+  ↳ app/controllers/books_controller.rb:20:in `create'
+  [1m[35m (5.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/books_controller.rb:20:in `create'
+Redirected to http://localhost:3000/books
+Completed 302 Found in 35ms (ActiveRecord: 12.5ms | Allocations: 3106)
+
+
+Started GET "/books" for ::1 at 2020-06-18 20:57:38 +0900
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.7ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/books/index.html.erb:12
+  Rendered books/index.html.erb within layouts/application (Duration: 18.4ms | Allocations: 1196)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 194ms (Views: 191.7ms | ActiveRecord: 0.7ms | Allocations: 5313)
+
+
+Started GET "/books/5/destroy" for ::1 at 2020-06-18 20:57:40 +0900
+Processing by BooksController#destroy as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mBook Load (1.5ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:31:in `destroy'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/books_controller.rb:32:in `destroy'
+  [1m[36mBook Destroy (2.1ms)[0m  [1m[31mDELETE FROM "books" WHERE "books"."id" = ?[0m  [["id", 5]]
+  ↳ app/controllers/books_controller.rb:32:in `destroy'
+  [1m[35m (7.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/books_controller.rb:32:in `destroy'
+Redirected to http://localhost:3000/books
+Completed 302 Found in 30ms (ActiveRecord: 11.4ms | Allocations: 3150)
+
+
+Started GET "/books" for ::1 at 2020-06-18 20:57:40 +0900
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.8ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/books/index.html.erb:12
+  Rendered books/index.html.erb within layouts/application (Duration: 11.5ms | Allocations: 1103)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 426ms (Views: 424.0ms | ActiveRecord: 0.8ms | Allocations: 7444)
+
+
+Started GET "/books" for ::1 at 2020-06-18 20:57:46 +0900
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (1.4ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/books/index.html.erb:12
+  Rendered books/index.html.erb within layouts/application (Duration: 16.3ms | Allocations: 1103)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 295ms (Views: 284.3ms | ActiveRecord: 1.4ms | Allocations: 5721)
+
+
+Started POST "/books/create" for ::1 at 2020-06-18 20:57:49 +0900
+Processing by BooksController#create as HTML
+  Parameters: {"book"=>{"title"=>"asvasv", "body"=>"asvasv"}, "commit"=>"create book", "authenticity_token"=>"DTRNE8DuhmH+mvvZcgpPcs1UD8P7JnVwAHh7fOTKsbq5l17YpArh7mlkbO3wW8M50xGieHv0UmCvmN4/qpdllg=="}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/books_controller.rb:20:in `create'
+  [1m[36mBook Create (2.9ms)[0m  [1m[32mINSERT INTO "books" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "asvasv"], ["body", "asvasv"], ["created_at", "2020-06-18 11:57:49.969567"], ["updated_at", "2020-06-18 11:57:49.969567"]]
+  ↳ app/controllers/books_controller.rb:20:in `create'
+  [1m[35m (8.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/books_controller.rb:20:in `create'
+Redirected to http://localhost:3000/books
+Completed 302 Found in 29ms (ActiveRecord: 11.2ms | Allocations: 3112)
+
+
+Started GET "/books" for ::1 at 2020-06-18 20:57:50 +0900
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.7ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/books/index.html.erb:12
+  Rendered books/index.html.erb within layouts/application (Duration: 15.4ms | Allocations: 1196)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 114ms (Views: 106.2ms | ActiveRecord: 0.7ms | Allocations: 5075)
+
+
+Started POST "/books/create" for ::1 at 2020-06-18 21:00:27 +0900
+Processing by BooksController#create as HTML
+  Parameters: {"book"=>{"title"=>"tes", "body"=>""}, "commit"=>"create book", "authenticity_token"=>"sM30qHZ4jlk7mMl6quOfhOD6tZRSRgvRQxr8UMBeSHoEbudjEpzp1qxmXk4oshPP/r8YL9KULMHs+lkTjgOcVg=="}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/books_controller.rb:20:in `create'
+  [1m[36mBook Create (6.9ms)[0m  [1m[32mINSERT INTO "books" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "tes"], ["body", ""], ["created_at", "2020-06-18 12:00:27.288469"], ["updated_at", "2020-06-18 12:00:27.288469"]]
+  ↳ app/controllers/books_controller.rb:20:in `create'
+  [1m[35m (9.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/books_controller.rb:20:in `create'
+Redirected to http://localhost:3000/books
+Completed 302 Found in 32ms (ActiveRecord: 16.8ms | Allocations: 3741)
+
+
+Started GET "/books" for ::1 at 2020-06-18 21:00:27 +0900
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.7ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/books/index.html.erb:12
+  Rendered books/index.html.erb within layouts/application (Duration: 10.1ms | Allocations: 1290)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 139ms (Views: 136.9ms | ActiveRecord: 0.7ms | Allocations: 5612)
+
+
+Started GET "/books/8/destroy" for ::1 at 2020-06-18 21:00:29 +0900
+Processing by BooksController#destroy as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mBook Load (2.6ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:31:in `destroy'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/books_controller.rb:32:in `destroy'
+  [1m[36mBook Destroy (5.5ms)[0m  [1m[31mDELETE FROM "books" WHERE "books"."id" = ?[0m  [["id", 8]]
+  ↳ app/controllers/books_controller.rb:32:in `destroy'
+  [1m[35m (7.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/books_controller.rb:32:in `destroy'
+Redirected to http://localhost:3000/books
+Completed 302 Found in 65ms (ActiveRecord: 15.4ms | Allocations: 3820)
+
+
+Started GET "/books" for ::1 at 2020-06-18 21:00:29 +0900
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (1.3ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/books/index.html.erb:12
+  Rendered books/index.html.erb within layouts/application (Duration: 9.8ms | Allocations: 1196)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 57ms (Views: 54.1ms | ActiveRecord: 1.3ms | Allocations: 5088)
+
+
+Started GET "/books/7/edit" for ::1 at 2020-06-18 21:00:37 +0900
+Processing by BooksController#edit as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mBook Load (2.8ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:15:in `edit'
+  Rendering books/edit.html.erb within layouts/application
+  Rendered books/edit.html.erb within layouts/application (Duration: 1.1ms | Allocations: 294)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 83ms (Views: 71.2ms | ActiveRecord: 2.8ms | Allocations: 4503)
+
+
+Started PATCH "/books/7" for ::1 at 2020-06-18 21:00:39 +0900
+  
+ActionController::RoutingError (No route matches [PATCH] "/books/7"):
+  
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.3) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.3) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started PATCH "/books/7" for ::1 at 2020-06-18 21:03:47 +0900
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  
+ActionController::RoutingError (No route matches [PATCH] "/books/7"):
+  
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.3) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.3) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/books/7/edit" for ::1 at 2020-06-18 21:03:51 +0900
+Processing by BooksController#edit as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:15:in `edit'
+  Rendering books/edit.html.erb within layouts/application
+  Rendered books/edit.html.erb within layouts/application (Duration: 1.9ms | Allocations: 351)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 82ms (Views: 39.9ms | ActiveRecord: 4.6ms | Allocations: 8496)
+
+
+Started PATCH "/books/7" for ::1 at 2020-06-18 21:03:53 +0900
+  
+ActionController::RoutingError (No route matches [PATCH] "/books/7"):
+  
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.3) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.3) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.3) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started PATCH "/books/7" for ::1 at 2020-06-18 21:06:12 +0900
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by BooksController#update as HTML
+  Parameters: {"authenticity_token"=>"S1u9jWUsC+mO8QY+/G5DWYnt7/HMaK6PYCSu7oPdGFlTEW82zDT9fUcl10aFJGNc2GKYIkeMZG3rgwGnI74CTQ==", "book"=>{"title"=>"asvasv", "body"=>"asvasv"}, "commit"=>"Update Book", "id"=>"7"}
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:25:in `update'
+Completed 500 Internal Server Error in 332ms (ActiveRecord: 2.4ms | Allocations: 54974)
+
+
+  
+NoMethodError (undefined method `show_book_path' for #<BooksController:0x00007f602885ba80>
+Did you mean?  books_path):
+  
+app/controllers/books_controller.rb:27:in `update'
+Started PATCH "/books/7" for ::1 at 2020-06-18 21:08:05 +0900
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by BooksController#update as HTML
+  Parameters: {"authenticity_token"=>"S1u9jWUsC+mO8QY+/G5DWYnt7/HMaK6PYCSu7oPdGFlTEW82zDT9fUcl10aFJGNc2GKYIkeMZG3rgwGnI74CTQ==", "book"=>{"title"=>"asvasv", "body"=>"asvasv"}, "commit"=>"Update Book", "id"=>"7"}
+  [1m[36mBook Load (1.5ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:25:in `update'
+Completed 500 Internal Server Error in 153ms (ActiveRecord: 3.4ms | Allocations: 54926)
+
+
+  
+NoMethodError (undefined method `show_book' for #<BooksController:0x00007f6028b37d58>):
+  
+app/controllers/books_controller.rb:27:in `update'
+Started GET "/books/7/edit" for ::1 at 2020-06-18 21:09:00 +0900
+Processing by BooksController#edit as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mBook Load (2.8ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:15:in `edit'
+  Rendering books/edit.html.erb within layouts/application
+  Rendered books/edit.html.erb within layouts/application (Duration: 2.0ms | Allocations: 350)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 72ms (Views: 62.1ms | ActiveRecord: 2.8ms | Allocations: 4588)
+
+
+Started GET "/books" for ::1 at 2020-06-18 21:09:02 +0900
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.6ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/books/index.html.erb:12
+  Rendered books/index.html.erb within layouts/application (Duration: 247.4ms | Allocations: 75998)
+Completed 500 Internal Server Error in 251ms (ActiveRecord: 0.6ms | Allocations: 76481)
+
+
+  
+ActionView::Template::Error (undefined method `show_book_path' for #<#<Class:0x00007f6028c90ba0>:0x00007f6028dddaa8>
+Did you mean?  books_path):
+    13:   <tr>
+    14:     <td><%= b.title %> </td>
+    15:     <td><%= b.body  %> </td>
+    16:     <td><%= link_to "Show", show_book_path(b) %></td>
+    17:     <td><%= link_to "Edit", edit_book_path(b) %></td>
+    18:     <td><%= link_to "Remove", destroy_book_path(b) %></td>
+    19:   </tr>
+  
+app/views/books/index.html.erb:16
+app/views/books/index.html.erb:12
+Started GET "/books" for ::1 at 2020-06-18 21:09:06 +0900
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (1.0ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/books/index.html.erb:12
+  Rendered books/index.html.erb within layouts/application (Duration: 229.0ms | Allocations: 75963)
+Completed 500 Internal Server Error in 231ms (ActiveRecord: 1.0ms | Allocations: 76446)
+
+
+  
+ActionView::Template::Error (undefined method `show_book_path' for #<#<Class:0x00007f6028c90ba0>:0x00007f60288484d0>
+Did you mean?  books_path):
+    13:   <tr>
+    14:     <td><%= b.title %> </td>
+    15:     <td><%= b.body  %> </td>
+    16:     <td><%= link_to "Show", show_book_path(b) %></td>
+    17:     <td><%= link_to "Edit", edit_book_path(b) %></td>
+    18:     <td><%= link_to "Remove", destroy_book_path(b) %></td>
+    19:   </tr>
+  
+app/views/books/index.html.erb:16
+app/views/books/index.html.erb:12
+Started GET "/books" for ::1 at 2020-06-18 21:11:13 +0900
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (1.1ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/books/index.html.erb:12
+  Rendered books/index.html.erb within layouts/application (Duration: 339.3ms | Allocations: 76364)
+Completed 500 Internal Server Error in 349ms (ActiveRecord: 1.1ms | Allocations: 77584)
+
+
+  
+ActionView::Template::Error (undefined method `destroy_book_path' for #<#<Class:0x00000000035e3398>:0x0000000003611900>
+Did you mean?  edit_book_path):
+    15:     <td><%= b.body  %> </td>
+    16:     <td><%= link_to "Show", book_path(b) %></td>
+    17:     <td><%= link_to "Edit", edit_book_path(b) %></td>
+    18:     <td><%= link_to "Remove", destroy_book_path(b) %></td>
+    19:   </tr>
+    20: <% end %>
+    21:   </tbody>
+  
+app/views/books/index.html.erb:18
+app/views/books/index.html.erb:12
+Started GET "/books" for ::1 at 2020-06-18 21:12:14 +0900
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/books/index.html.erb:12
+  Rendered books/index.html.erb within layouts/application (Duration: 419.3ms | Allocations: 148845)
+Completed 500 Internal Server Error in 433ms (ActiveRecord: 0.4ms | Allocations: 150065)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `delete' for #<#<Class:0x0000000003307cc8>:0x00000000033b0968>):
+    15:     <td><%= b.body  %> </td>
+    16:     <td><%= link_to "Show", book_path(b) %></td>
+    17:     <td><%= link_to "Edit", edit_book_path(b) %></td>
+    18:     <td><%= link_to "Remove", book_path(b), method: delete %></td>
+    19:   </tr>
+    20: <% end %>
+    21:   </tbody>
+  
+app/views/books/index.html.erb:18
+app/views/books/index.html.erb:12
+Started GET "/books" for ::1 at 2020-06-18 21:12:40 +0900
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/books/index.html.erb:12
+  Rendered books/index.html.erb within layouts/application (Duration: 6.5ms | Allocations: 1941)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 42ms (Views: 40.0ms | ActiveRecord: 0.5ms | Allocations: 6324)
+
+
+Started DELETE "/books/7" for ::1 at 2020-06-18 21:12:42 +0900
+Processing by BooksController#destroy as HTML
+  Parameters: {"authenticity_token"=>"gH/CYgEv61ZkQOvL+UBsTIckiD8gqygxmZ9YP5AImWKYNRDZqDcdwq2UOrOACkxJ1qv/7KtP4tMSOPd2MGuDdg==", "id"=>"7"}
+  [1m[36mBook Load (0.6ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:31:in `destroy'
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/books_controller.rb:32:in `destroy'
+  [1m[36mBook Destroy (2.9ms)[0m  [1m[31mDELETE FROM "books" WHERE "books"."id" = ?[0m  [["id", 7]]
+  ↳ app/controllers/books_controller.rb:32:in `destroy'
+  [1m[35m (8.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/books_controller.rb:32:in `destroy'
+Completed 500 Internal Server Error in 372ms (ActiveRecord: 12.2ms | Allocations: 103452)
+
+
+  
+NameError (undefined local variable or method `index_book' for #<BooksController:0x00007f6024eebca0>):
+  
+app/controllers/books_controller.rb:33:in `destroy'
+Started DELETE "/books/7" for ::1 at 2020-06-18 21:14:10 +0900
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by BooksController#destroy as HTML
+  Parameters: {"authenticity_token"=>"gH/CYgEv61ZkQOvL+UBsTIckiD8gqygxmZ9YP5AImWKYNRDZqDcdwq2UOrOACkxJ1qv/7KtP4tMSOPd2MGuDdg==", "id"=>"7"}
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:31:in `destroy'
+Completed 404 Not Found in 19ms (ActiveRecord: 10.5ms | Allocations: 2190)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Book with 'id'=7):
+  
+app/controllers/books_controller.rb:31:in `destroy'
+Started GET "/books" for ::1 at 2020-06-18 21:14:24 +0900
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.6ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/books/index.html.erb:12
+  Rendered books/index.html.erb within layouts/application (Duration: 8.8ms | Allocations: 1593)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 121ms (Views: 109.3ms | ActiveRecord: 0.6ms | Allocations: 8787)
+
+
+Started DELETE "/books/6" for ::1 at 2020-06-18 21:14:26 +0900
+Processing by BooksController#destroy as HTML
+  Parameters: {"authenticity_token"=>"kKuHWCCGxmGzcGkCD9P+a0gyjSnqLmXZR/5ZntmyRdCI4VXjiZ4w9XqkuHp2md5uGb36+mHKrzvMWfbXedFfxA==", "id"=>"6"}
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:31:in `destroy'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/books_controller.rb:32:in `destroy'
+  [1m[36mBook Destroy (1.8ms)[0m  [1m[31mDELETE FROM "books" WHERE "books"."id" = ?[0m  [["id", 6]]
+  ↳ app/controllers/books_controller.rb:32:in `destroy'
+  [1m[35m (6.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/books_controller.rb:32:in `destroy'
+Redirected to http://localhost:3000/books/6
+Completed 302 Found in 29ms (ActiveRecord: 9.1ms | Allocations: 3921)
+
+
+Started GET "/books/6" for ::1 at 2020-06-18 21:14:26 +0900
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:8:in `show'
+Completed 404 Not Found in 3ms (ActiveRecord: 0.4ms | Allocations: 1132)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Book with 'id'=6):
+  
+app/controllers/books_controller.rb:8:in `show'
+Started GET "/books" for ::1 at 2020-06-18 21:15:33 +0900
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.8ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/books/index.html.erb:12
+  Rendered books/index.html.erb within layouts/application (Duration: 4.4ms | Allocations: 1490)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 78ms (Views: 56.1ms | ActiveRecord: 6.8ms | Allocations: 9134)
+
+
+Started POST "/books" for ::1 at 2020-06-18 21:15:39 +0900
+Processing by BooksController#create as HTML
+  Parameters: {"book"=>{"title"=>"sascascs", "body"=>"asvadbdba"}, "commit"=>"create book", "authenticity_token"=>"RvJl4UOugKxg5k4DnpPmCEoMhpOUJJlD338sijsMPkIwl6xXYflP0x13hf5Fp8lgTXPxHivGHvfxKkajWdOmyg=="}
+  [1m[35m (0.8ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/books_controller.rb:20:in `create'
+  [1m[36mBook Create (2.5ms)[0m  [1m[32mINSERT INTO "books" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "sascascs"], ["body", "asvadbdba"], ["created_at", "2020-06-18 12:15:39.806781"], ["updated_at", "2020-06-18 12:15:39.806781"]]
+  ↳ app/controllers/books_controller.rb:20:in `create'
+  [1m[35m (6.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/books_controller.rb:20:in `create'
+Completed 500 Internal Server Error in 526ms (ActiveRecord: 9.6ms | Allocations: 101959)
+
+
+  
+NameError (undefined local variable or method `books' for #<BooksController:0x00007f6028c4ab50>
+Did you mean?  book):
+  
+app/controllers/books_controller.rb:21:in `create'
+Started POST "/books" for ::1 at 2020-06-18 21:16:06 +0900
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by BooksController#create as HTML
+  Parameters: {"book"=>{"title"=>"sascascs", "body"=>"asvadbdba"}, "commit"=>"create book", "authenticity_token"=>"RvJl4UOugKxg5k4DnpPmCEoMhpOUJJlD338sijsMPkIwl6xXYflP0x13hf5Fp8lgTXPxHivGHvfxKkajWdOmyg=="}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/books_controller.rb:20:in `create'
+  [1m[36mBook Create (1.5ms)[0m  [1m[32mINSERT INTO "books" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "sascascs"], ["body", "asvadbdba"], ["created_at", "2020-06-18 12:16:07.151900"], ["updated_at", "2020-06-18 12:16:07.151900"]]
+  ↳ app/controllers/books_controller.rb:20:in `create'
+  [1m[35m (6.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/books_controller.rb:20:in `create'
+Redirected to http://localhost:3000/books
+Completed 302 Found in 39ms (ActiveRecord: 9.9ms | Allocations: 7627)
+
+
+Started GET "/books" for ::1 at 2020-06-18 21:16:07 +0900
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (1.8ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/books/index.html.erb:12
+  Rendered books/index.html.erb within layouts/application (Duration: 6.7ms | Allocations: 1698)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 95ms (Views: 90.6ms | ActiveRecord: 1.8ms | Allocations: 6057)
+
+
+Started DELETE "/books/10" for ::1 at 2020-06-18 21:16:10 +0900
+Processing by BooksController#destroy as HTML
+  Parameters: {"authenticity_token"=>"BLAxCk/9R+whfTPakJWpovUPwugtQDwK49mZ+Eu5r14c+uOx5uWxeOip4qLp34mnpIC1O6ak9uhofjax69q1Sg==", "id"=>"10"}
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:31:in `destroy'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/books_controller.rb:32:in `destroy'
+  [1m[36mBook Destroy (7.0ms)[0m  [1m[31mDELETE FROM "books" WHERE "books"."id" = ?[0m  [["id", 10]]
+  ↳ app/controllers/books_controller.rb:32:in `destroy'
+  [1m[35m (6.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/books_controller.rb:32:in `destroy'
+Redirected to http://localhost:3000/books
+Completed 302 Found in 29ms (ActiveRecord: 13.5ms | Allocations: 3292)
+
+
+Started GET "/books" for ::1 at 2020-06-18 21:16:10 +0900
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/books/index.html.erb:12
+  Rendered books/index.html.erb within layouts/application (Duration: 3.7ms | Allocations: 1132)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 148ms (Views: 146.6ms | ActiveRecord: 0.4ms | Allocations: 6219)
+
+
+Started POST "/books" for ::1 at 2020-06-18 21:16:14 +0900
+Processing by BooksController#create as HTML
+  Parameters: {"book"=>{"title"=>"avav", "body"=>"asvass"}, "commit"=>"create book", "authenticity_token"=>"gYMb//BrvPSQyK9dylx6xb7C7D4f8YGEuN20EUrH0h/35tJJ0jxzi+1ZZKARaFWtub2bs6ATBjCWiN44KBhKlw=="}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/books_controller.rb:20:in `create'
+  [1m[36mBook Create (1.6ms)[0m  [1m[32mINSERT INTO "books" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "avav"], ["body", "asvass"], ["created_at", "2020-06-18 12:16:14.720705"], ["updated_at", "2020-06-18 12:16:14.720705"]]
+  ↳ app/controllers/books_controller.rb:20:in `create'
+  [1m[35m (9.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/books_controller.rb:20:in `create'
+Redirected to http://localhost:3000/books
+Completed 302 Found in 23ms (ActiveRecord: 10.8ms | Allocations: 3079)
+
+
+Started GET "/books" for ::1 at 2020-06-18 21:16:14 +0900
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/books/index.html.erb:12
+  Rendered books/index.html.erb within layouts/application (Duration: 7.7ms | Allocations: 1235)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 66ms (Views: 64.1ms | ActiveRecord: 0.5ms | Allocations: 5036)
+
+
+Started DELETE "/books/11" for ::1 at 2020-06-18 21:16:15 +0900
+Processing by BooksController#destroy as HTML
+  Parameters: {"authenticity_token"=>"caeKcDBTQgfcClDdoh/GjDJVCtKxbryVAOPrlJd9n3hp7VjLmUu0kxXegaXbVeaJY9p9ATqKdneLRETdNx6FbA==", "id"=>"11"}
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:31:in `destroy'
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/books_controller.rb:32:in `destroy'
+  [1m[36mBook Destroy (2.4ms)[0m  [1m[31mDELETE FROM "books" WHERE "books"."id" = ?[0m  [["id", 11]]
+  ↳ app/controllers/books_controller.rb:32:in `destroy'
+  [1m[35m (5.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/books_controller.rb:32:in `destroy'
+Redirected to http://localhost:3000/books
+Completed 302 Found in 31ms (ActiveRecord: 8.7ms | Allocations: 5113)
+
+
+Started GET "/books" for ::1 at 2020-06-18 21:16:15 +0900
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/books/index.html.erb:12
+  Rendered books/index.html.erb within layouts/application (Duration: 12.6ms | Allocations: 1131)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 72ms (Views: 71.0ms | ActiveRecord: 0.5ms | Allocations: 4985)
+
+
+Started POST "/books" for ::1 at 2020-06-18 21:16:19 +0900
+Processing by BooksController#create as HTML
+  Parameters: {"book"=>{"title"=>"asvasvasv", "body"=>"aasvasvav"}, "commit"=>"create book", "authenticity_token"=>"hzSWY1dAFhY2HAkycb8sBYAnJuchdsGsiTCEZ9L0qE3xUV/VdRfZaUuNws+qiwNth1hRap6URhinZe5OsCswxQ=="}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/books_controller.rb:20:in `create'
+  [1m[36mBook Create (6.5ms)[0m  [1m[32mINSERT INTO "books" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "asvasvasv"], ["body", "aasvasvav"], ["created_at", "2020-06-18 12:16:19.458153"], ["updated_at", "2020-06-18 12:16:19.458153"]]
+  ↳ app/controllers/books_controller.rb:20:in `create'
+  [1m[35m (5.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/books_controller.rb:20:in `create'
+Redirected to http://localhost:3000/books
+Completed 302 Found in 38ms (ActiveRecord: 12.4ms | Allocations: 4192)
+
+
+Started GET "/books" for ::1 at 2020-06-18 21:16:19 +0900
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.7ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/books/index.html.erb:12
+  Rendered books/index.html.erb within layouts/application (Duration: 10.7ms | Allocations: 1235)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 167ms (Views: 164.9ms | ActiveRecord: 0.7ms | Allocations: 5974)
+
+
+Started GET "/books/1" for ::1 at 2020-06-18 21:16:20 +0900
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:8:in `show'
+  Rendering books/show.html.erb within layouts/application
+  Rendered books/show.html.erb within layouts/application (Duration: 190.8ms | Allocations: 75250)
+Completed 500 Internal Server Error in 200ms (ActiveRecord: 0.4ms | Allocations: 76387)
+
+
+  
+ActionView::Template::Error (undefined method `destroy_book_path' for #<#<Class:0x00007f6028892198>:0x00007f6024667a20>
+Did you mean?  edit_book_path):
+    10: </p>
+    11: 
+    12: <%= link_to "Edit", edit_book_path(@book) %>
+    13: <%= link_to "Remove", destroy_book_path(@book) %>
+    14: <%= link_to "Back", index_book_path %>
+  
+app/views/books/show.html.erb:13
+Started GET "/books/1" for ::1 at 2020-06-18 21:16:58 +0900
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:8:in `show'
+  Rendering books/show.html.erb within layouts/application
+  Rendered books/show.html.erb within layouts/application (Duration: 3.4ms | Allocations: 1085)
+Completed 500 Internal Server Error in 137ms (ActiveRecord: 0.5ms | Allocations: 2819)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check 
+<p>
+  <strong>Title:</strong>
+  <%= @book.title  %>
+</p>
+
+<p>
+  <strong>body:</strong>
+  <%= @book.body  %>
+</p>
+
+<%= link_to "Edit", edit_book_path(@book) %>
+<%= link_to "Remove", book_path(@book) method: :delete %>
+<%= link_to "Back", index_book_path %>
+
+):
+1:    
+2:    <p>
+3:      <strong>Title:</strong>
+4:      <%= @book.title  %>
+5:    </p>
+6:    
+7:    <p>
+8:      <strong>body:</strong>
+9:      <%= @book.body  %>
+10:    </p>
+11:    
+12:    <%= link_to "Edit", edit_book_path(@book) %>
+13:    <%= link_to "Remove", book_path(@book) method: :delete %>
+14:    <%= link_to "Back", index_book_path %>
+  
+app/views/books/show.html.erb:13: syntax error, unexpected tLABEL, expecting ')'
+app/views/books/show.html.erb:13: syntax error, unexpected tLABEL, expecting ')'
+app/views/books/show.html.erb:13: syntax error, unexpected tLABEL, expecting ')'
+app/views/books/show.html.erb:13: syntax error, unexpected tLABEL, expecting ')'
+app/views/books/show.html.erb:13: syntax error, unexpected tLABEL, expecting ')'
+app/views/books/show.html.erb:13: syntax error, unexpected tLABEL, expecting ')'
+Started GET "/books/1" for ::1 at 2020-06-18 21:17:05 +0900
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:8:in `show'
+  Rendering books/show.html.erb within layouts/application
+  Rendered books/show.html.erb within layouts/application (Duration: 1.1ms | Allocations: 1071)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.4ms | Allocations: 2068)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check 
+<p>
+  <strong>Title:</strong>
+  <%= @book.title  %>
+</p>
+
+<p>
+  <strong>body:</strong>
+  <%= @book.body  %>
+</p>
+
+<%= link_to "Edit", edit_book_path(@book) %>
+<%= link_to "Remove", book_path(@book) method: :delete %>
+<%= link_to "Back", index_book_path %>
+
+):
+1:    
+2:    <p>
+3:      <strong>Title:</strong>
+4:      <%= @book.title  %>
+5:    </p>
+6:    
+7:    <p>
+8:      <strong>body:</strong>
+9:      <%= @book.body  %>
+10:    </p>
+11:    
+12:    <%= link_to "Edit", edit_book_path(@book) %>
+13:    <%= link_to "Remove", book_path(@book) method: :delete %>
+14:    <%= link_to "Back", index_book_path %>
+  
+app/views/books/show.html.erb:13: syntax error, unexpected tLABEL, expecting ')'
+app/views/books/show.html.erb:13: syntax error, unexpected tLABEL, expecting ')'
+app/views/books/show.html.erb:13: syntax error, unexpected tLABEL, expecting ')'
+app/views/books/show.html.erb:13: syntax error, unexpected tLABEL, expecting ')'
+app/views/books/show.html.erb:13: syntax error, unexpected tLABEL, expecting ')'
+app/views/books/show.html.erb:13: syntax error, unexpected tLABEL, expecting ')'
+Started GET "/books/1" for ::1 at 2020-06-18 21:17:40 +0900
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:8:in `show'
+  Rendering books/show.html.erb within layouts/application
+  Rendered books/show.html.erb within layouts/application (Duration: 430.9ms | Allocations: 147487)
+Completed 500 Internal Server Error in 445ms (ActiveRecord: 0.4ms | Allocations: 149222)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `index_book_path' for #<#<Class:0x00007f60287d6470>:0x00007f60287d4198>
+Did you mean?  new_book_path
+               edit_book_path):
+    11: 
+    12: <%= link_to "Edit", edit_book_path(@book) %>
+    13: <%= link_to "Remove", book_path(@book), method: :delete %>
+    14: <%= link_to "Back", index_book_path %>
+  
+app/views/books/show.html.erb:14
+Started GET "/books/1" for ::1 at 2020-06-18 21:17:58 +0900
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:8:in `show'
+  Rendering books/show.html.erb within layouts/application
+  Rendered books/show.html.erb within layouts/application (Duration: 1.4ms | Allocations: 292)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 83ms (Views: 76.5ms | ActiveRecord: 0.4ms | Allocations: 5660)
+
+
+Started GET "/books" for ::1 at 2020-06-18 21:18:01 +0900
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.6ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/books/index.html.erb:12
+  Rendered books/index.html.erb within layouts/application (Duration: 15.8ms | Allocations: 1564)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 60ms (Views: 53.1ms | ActiveRecord: 0.6ms | Allocations: 5227)
+
+
+Started GET "/books/1" for ::1 at 2020-06-18 21:18:03 +0900
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.7ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:8:in `show'
+  Rendering books/show.html.erb within layouts/application
+  Rendered books/show.html.erb within layouts/application (Duration: 0.4ms | Allocations: 107)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 41ms (Views: 36.6ms | ActiveRecord: 0.7ms | Allocations: 4198)
+
+
+Started GET "/books/1/edit" for ::1 at 2020-06-18 21:18:04 +0900
+Processing by BooksController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:15:in `edit'
+  Rendering books/edit.html.erb within layouts/application
+  Rendered books/edit.html.erb within layouts/application (Duration: 1.5ms | Allocations: 469)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 37ms (Views: 33.3ms | ActiveRecord: 0.4ms | Allocations: 4640)
+
+
+Started PATCH "/books/1" for ::1 at 2020-06-18 21:18:05 +0900
+Processing by BooksController#update as HTML
+  Parameters: {"authenticity_token"=>"aVTh5b+cQGMScRlamdZ43ix96EyeR3jrjKU5+LQVitTv8BkokeAAgTItAQEgzCwHy8qxrU153hOm1V6bZpRkSQ==", "book"=>{"title"=>"test", "body"=>"test"}, "commit"=>"Update Book", "id"=>"1"}
+  [1m[36mBook Load (0.7ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:25:in `update'
+Redirected to http://localhost:3000/books/1
+Completed 302 Found in 6ms (ActiveRecord: 0.7ms | Allocations: 1138)
+
+
+Started GET "/books/1" for ::1 at 2020-06-18 21:18:05 +0900
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.8ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:8:in `show'
+  Rendering books/show.html.erb within layouts/application
+  Rendered books/show.html.erb within layouts/application (Duration: 0.6ms | Allocations: 112)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 64ms (Views: 58.7ms | ActiveRecord: 0.8ms | Allocations: 4409)
+
+
+Started GET "/books/1/edit" for ::1 at 2020-06-18 21:18:07 +0900
+Processing by BooksController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.7ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:15:in `edit'
+  Rendering books/edit.html.erb within layouts/application
+  Rendered books/edit.html.erb within layouts/application (Duration: 0.7ms | Allocations: 294)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 127ms (Views: 123.3ms | ActiveRecord: 0.7ms | Allocations: 5161)
+
+
+Started PATCH "/books/1" for ::1 at 2020-06-18 21:18:09 +0900
+Processing by BooksController#update as HTML
+  Parameters: {"authenticity_token"=>"OxAcinR/QsllJLan+SERTEJxSfcluRGwOsrA4pC+nSK9tORHWgMCK0V4rvxAO0WVpcYQFvaHt0gQuqeBQj9zvw==", "book"=>{"title"=>"test", "body"=>"testasvas"}, "commit"=>"Update Book", "id"=>"1"}
+  [1m[36mBook Load (0.7ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:25:in `update'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/books_controller.rb:26:in `update'
+  [1m[36mBook Update (1.9ms)[0m  [1m[33mUPDATE "books" SET "body" = ?, "updated_at" = ? WHERE "books"."id" = ?[0m  [["body", "testasvas"], ["updated_at", "2020-06-18 12:18:09.268495"], ["id", 1]]
+  ↳ app/controllers/books_controller.rb:26:in `update'
+  [1m[35m (7.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/books_controller.rb:26:in `update'
+Redirected to http://localhost:3000/books/1
+Completed 302 Found in 32ms (ActiveRecord: 10.1ms | Allocations: 4548)
+
+
+Started GET "/books/1" for ::1 at 2020-06-18 21:18:09 +0900
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (1.0ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:8:in `show'
+  Rendering books/show.html.erb within layouts/application
+  Rendered books/show.html.erb within layouts/application (Duration: 0.4ms | Allocations: 106)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 83ms (Views: 74.9ms | ActiveRecord: 1.0ms | Allocations: 4783)
+
+
+Started GET "/books/1/edit" for ::1 at 2020-06-18 21:18:10 +0900
+Processing by BooksController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:15:in `edit'
+  Rendering books/edit.html.erb within layouts/application
+  Rendered books/edit.html.erb within layouts/application (Duration: 2.3ms | Allocations: 294)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 149ms (Views: 139.9ms | ActiveRecord: 0.5ms | Allocations: 5485)
+
+
+Started PATCH "/books/1" for ::1 at 2020-06-18 21:18:12 +0900
+Processing by BooksController#update as HTML
+  Parameters: {"authenticity_token"=>"RJaQqYAu6hLvbZzPSBd1axa6mp5JjVpfK5VA/ULpbl3CMmhkrlKq8M8xhJTxDSGy8Q3Df5qz/KcB5SeekGiAwA==", "book"=>{"title"=>"test2", "body"=>"testasvas"}, "commit"=>"Update Book", "id"=>"1"}
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:25:in `update'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/books_controller.rb:26:in `update'
+  [1m[36mBook Update (1.9ms)[0m  [1m[33mUPDATE "books" SET "title" = ?, "updated_at" = ? WHERE "books"."id" = ?[0m  [["title", "test2"], ["updated_at", "2020-06-18 12:18:12.870018"], ["id", 1]]
+  ↳ app/controllers/books_controller.rb:26:in `update'
+  [1m[35m (5.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/books_controller.rb:26:in `update'
+Redirected to http://localhost:3000/books/1
+Completed 302 Found in 34ms (ActiveRecord: 8.3ms | Allocations: 3841)
+
+
+Started GET "/books/1" for ::1 at 2020-06-18 21:18:12 +0900
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:8:in `show'
+  Rendering books/show.html.erb within layouts/application
+  Rendered books/show.html.erb within layouts/application (Duration: 0.3ms | Allocations: 106)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 96ms (Views: 93.5ms | ActiveRecord: 0.3ms | Allocations: 5073)
+
+
+Started GET "/books" for ::1 at 2020-06-18 21:18:15 +0900
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.6ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/books/index.html.erb:12
+  Rendered books/index.html.erb within layouts/application (Duration: 5.7ms | Allocations: 1239)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 41ms (Views: 36.7ms | ActiveRecord: 0.6ms | Allocations: 4736)
+
+
+Started GET "/books/9" for ::1 at 2020-06-18 21:18:16 +0900
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mBook Load (1.9ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:8:in `show'
+  Rendering books/show.html.erb within layouts/application
+  Rendered books/show.html.erb within layouts/application (Duration: 0.3ms | Allocations: 106)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 44ms (Views: 37.0ms | ActiveRecord: 1.9ms | Allocations: 4195)
+
+
+Started DELETE "/books/9" for ::1 at 2020-06-18 21:18:17 +0900
+Processing by BooksController#destroy as HTML
+  Parameters: {"authenticity_token"=>"c0o0ydKBpKoUUGtsCh3sX43qptTeCdy3lpcbJ/OtcchrAOZye5lSPt2EuhRzV8xa3GXRB1XtFlUdMLRuU85r3A==", "id"=>"9"}
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:31:in `destroy'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/books_controller.rb:32:in `destroy'
+  [1m[36mBook Destroy (6.4ms)[0m  [1m[31mDELETE FROM "books" WHERE "books"."id" = ?[0m  [["id", 9]]
+  ↳ app/controllers/books_controller.rb:32:in `destroy'
+  [1m[35m (6.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/books_controller.rb:32:in `destroy'
+Redirected to http://localhost:3000/books
+Completed 302 Found in 28ms (ActiveRecord: 13.1ms | Allocations: 4733)
+
+
+Started GET "/books" for ::1 at 2020-06-18 21:18:17 +0900
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/books/index.html.erb:12
+  Rendered books/index.html.erb within layouts/application (Duration: 2.8ms | Allocations: 1129)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 30ms (Views: 28.9ms | ActiveRecord: 0.4ms | Allocations: 4547)
+
+

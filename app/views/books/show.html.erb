@@ -1,0 +1,14 @@
+
+<p>
+  <strong>Title:</strong>
+  <%= @book.title  %>
+</p>
+
+<p>
+  <strong>body:</strong>
+  <%= @book.body  %>
+</p>
+
+<%= link_to "Edit", edit_book_path(@book) %>
+<%= link_to "Remove", book_path(@book), method: :delete %>
+<%= link_to "Back", books_path %>
