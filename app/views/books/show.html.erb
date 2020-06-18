@@ -1,4 +1,7 @@
 
+<% if flash[:success].present? %>
+  <p class='flash-success'><%= flash[:success] %></p>
+<% end %>
 <p>
   <strong>Title:</strong>
   <%= @book.title  %>
@@ -10,5 +13,5 @@
 </p>
 
 <%= link_to "Edit", edit_book_path(@book) %>
-<%= link_to "Remove", book_path(@book), method: :delete %>
 <%= link_to "Back", books_path %>
+<%= link_to "Destroy", book_path(@book), method: :delete %>
