@@ -3,7 +3,7 @@
   <% if @book.errors.any? %>
     <div id="error_explanation">
       <h2><%= @book.errors.count %> errors prohibited this book from being saved:</h2>
-      <ul>
+      <ul style="color: red">
       <% @book.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>

@@ -4313,3 +4313,58 @@ Processing by BooksController#index as HTML
 Completed 200 OK in 70ms (Views: 65.6ms | ActiveRecord: 0.4ms | Allocations: 4936)
 
 
+Started GET "/books/" for 127.0.0.1 at 2020-06-19 11:21:23 +0900
+  [1m[35m (3.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.6ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/books/index.html.erb:10
+  Rendered books/index.html.erb within layouts/application (Duration: 24.9ms | Allocations: 2100)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 187ms (Views: 148.1ms | ActiveRecord: 2.4ms | Allocations: 13614)
+
+
+Started POST "/books" for 127.0.0.1 at 2020-06-19 11:21:31 +0900
+Processing by BooksController#create as HTML
+  Parameters: {"authenticity_token"=>"Xu6KqUGrvnoayWuwnTOkqeUeRS/+gfAUlvEHLepraxRGpFgS6LNI7tMdusjkeYSstJEy/HVlOvYdVqhkSghxAA==", "book"=>{"title"=>"", "body"=>""}, "commit"=>"Create Book"}
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/books/index.html.erb:10
+  Rendered books/index.html.erb within layouts/application (Duration: 10.3ms | Allocations: 1426)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 96ms (Views: 72.0ms | ActiveRecord: 0.5ms | Allocations: 7412)
+
+
+Started GET "/books/12/edit" for 127.0.0.1 at 2020-06-19 11:21:48 +0900
+Processing by BooksController#edit as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:25:in `edit'
+  Rendering books/edit.html.erb within layouts/application
+  Rendered books/edit.html.erb within layouts/application (Duration: 10.7ms | Allocations: 700)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 434ms (Views: 203.4ms | ActiveRecord: 0.5ms | Allocations: 8375)
+
+
+Started PATCH "/books/12" for 127.0.0.1 at 2020-06-19 11:21:51 +0900
+Processing by BooksController#update as HTML
+  Parameters: {"authenticity_token"=>"XMv8BvIhq+fjzi6Fh6k3qcqWdItjB+YSCoZSNLnLz+f1Ppx4tsn+gKC/ZcCYtK2d2J2dSoZes5r/yV3e3//iZg==", "book"=>{"title"=>"", "body"=>""}, "commit"=>"Update Book", "id"=>"12"}
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:29:in `update'
+  Rendering books/edit.html.erb within layouts/application
+  Rendered books/edit.html.erb within layouts/application (Duration: 17.2ms | Allocations: 647)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 155ms (Views: 149.3ms | ActiveRecord: 0.4ms | Allocations: 6210)
+
+
+Started GET "/" for ::1 at 2020-06-22 11:33:45 +0900
+  [1m[35m (8.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BooksController#top as HTML
+  Rendering books/top.html.erb within layouts/application
+  Rendered books/top.html.erb within layouts/application (Duration: 6.1ms | Allocations: 290)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 366ms (Views: 353.5ms | ActiveRecord: 0.0ms | Allocations: 9523)
+
+
